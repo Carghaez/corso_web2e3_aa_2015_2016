@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Algoritmo di ricerca: Bubble Sort</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<script type="text/javascript">
+	var v = [5, 1, 4, 3, 20];
+	var i = 0;
+	// l'etichetta i è la posizione
+	// l'etichetta v[i] è l'elemento in posizione i dell'array v
+	// v.length è il numero totale di elementi = 5
+	// length è l'attributo lunghezza dell'array v
+	var scambio = true;
+	while(scambio)
+	{
+		scambio = false;
+		i = 0;
+		while (i < v.length - 1)
+		{
+			if (v[i] > v[i+1])
+			{
+				var temp = v[i];
+				v[i] = v[i+1];
+				v[i+1] = temp;
+				scambio = true;
+			}
+			i++; // i = i + 1;
+		}
+	}
+	// Il risultato dovrà essere 1 3 4 5 20.
+	i = 0;
+	var output = "";
+	while(i < v.length)
+	{
+		output = output + v[i] + " ";
+		i++;
+	}
+	console.log(output);
+	</script>
+</body>
+</html>
