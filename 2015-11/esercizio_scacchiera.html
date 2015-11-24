@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scacchiera 8x8</title>
+	<style type="text/css">
+		* {
+			/* box-sizing: border-box; */
+		}
+		html, body {
+			padding: 0;
+			margin: 0;
+		}
+		body>div { /* Scacchiera */
+			width: 800px;
+			height: 800px;
+			/* border: 1px solid green; */
+			margin: 20px auto;
+		}
+		body>div>div { /* Righe della scacchiera */
+			height: 100px;
+			/* border: 1px solid red; */
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		body>div>div>div { /* Celle delle righe della scacchiera */
+			float: left;
+			height: 100px;
+			width: 100px;
+			box-sizing: border-box;
+			border: 1px solid black;
+		}
+
+		body>div>div>div:first-child {
+			border-left: 2px solid black;
+		}
+		body>div>div>div:last-child {
+			border-right: 2px solid black;
+		}
+
+		body>div>div:first-child>div {
+			border-top: 2px solid black;
+		}
+		body>div>div:last-child>div {
+			border-bottom: 2px solid black;
+		}
+
+		body>div>div:nth-child(2n)>div:nth-child(2n),
+		body>div>div:nth-child(2n+1)>div:nth-child(2n+1) {
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</div>
+</body>
+</html>
