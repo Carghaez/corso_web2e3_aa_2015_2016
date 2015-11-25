@@ -36,6 +36,10 @@
 			console.log("la variabile q non è stata inizializzata");
 		}
 
+		// La dichiarazione e l'inizalizzazione può
+		// essere effettuata nella stessa istruzione
+		var k = "ciao";
+
 		// Tipi di dato
 		var stringa = "questa è una stringa";
 		// 4 tra apici singoli ( ' ) o doppi ( " )
@@ -110,6 +114,7 @@
 
 		// use Array.isArray or Object.prototype.toString.call
 		// to differentiate regular objects from arrays
+		console.log(typeof [] === 'object');
 		console.log(typeof [1, 2, 4] === 'object');
 
 		console.log(typeof new Date() === 'object');
@@ -204,6 +209,38 @@
 			// Blocco di istruzioni del ciclo
 			console.log("questa è l'iterazione del ciclo for n."+i);
 		}
+
+		// JS: I vettori / array
+		// In generale, un vettore/array è
+		// una collezione di variabili dello stesso tipo
+		// a cui possiamo accedere attraverso l'etichetta
+		// dell'array e il suo indice.
+		// l'indice di un array è, in generale, di tipo
+		// numerico.
+		// NOTA BENE: In JS la restrizione di tipo non c'è.
+		// La dichiarazione di un array avviene
+		// nello stesso modo delle variabili generiche.
+		// Per inizializzare una variabile in array
+		// bisogna utilizzare le []
+		var vettore = [];
+		if (Array.isArray(vettore) === true) {
+			console.log("vettore è un array");
+		}
+
+		// All'interno delle parentesi quadre ( [] ) è
+		// possibile inserire un numero finito
+		// di elementi separati da virgola ( , )
+		vettore = ['4', 43, 52];
+
+		// per accedere al singolo elemento del vettore
+		// bisogna utilizzare il suo INDICE!
+
+		// vettore[2] restituirà 52
+		console.log(vettore[2]);
+
+		// Attenzione! vettore restiuise tutto l'oggetto Array
+		// non è possibile effettuare operazioni matematiche
+		// sull'array ma solo sui singoli elementi!
 	</script>
 </body>
 </html>
