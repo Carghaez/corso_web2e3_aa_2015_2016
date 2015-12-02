@@ -1,0 +1,3 @@
+Scrivere un algoritmo(tramite diagramma di flusso, pseudo-codice e javascript) che dati due numeri (x, y) in input, sottrae y volte il numero y dal numero x.
+
+Esempio: x = 40, y = 3. L'algoritmo dovrà restituire 31.
