@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leggere un voto e controllare che sia esatto (cioè compreso fra uno e dieci)</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+	var voto = 11;
+
+	if ( voto >= 1 && voto <= 10)
+	{
+		console.log("è corretto");
+	}
+	else
+	{
+		console.log("non è corretto");
+	}
+
+	/* OPPURE */
+	var controllo = "";
+	if ( voto < 1 || voto > 10)
+	{
+		controllo = "non ";
+	}
+	console.log(controllo + "è corretto");
+	</script>
+</body>
+</html>
