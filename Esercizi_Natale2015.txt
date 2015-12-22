@@ -1,0 +1,11 @@
+Esercizio 1 - Selezione:
+Leggere tre numeri e calcolare: 
+a) la somma di quelli che sono divisibili per due o per cinque;
+b) il prodotto di quelli che sono divisibili per due e per cinque;
+c) la media di quelli che non sono divisibili né per due né per cinque. 
+
+Suggerimento: USATE IL MODULO (operatore %), quando un numero è divisibile per 5? Quando il resto della divsione per 5 è 0! Quindi (numero%5 == 0) se restituire VERO allora numero è divisibile per 5
+
+
+Esercizio 2 - Iterazione:
+Un veicolo V1 si muove con una velocità di 10 m/s, mentre un veicolo V2 va a 2,5 m/s. V2 parte con un vantaggio di X metri. Stampare la distanza, secondo per secondo, finché V1 raggiunge V2. 
