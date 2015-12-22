@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+	var x = -1;
+	var y = -1;
+	var quadrante; // può assumere 1 - 2 - 3 - 4
+
+	if (x > 0 && y > 0)
+	{
+		quadrante = "1";
+	}
+	if (x < 0 && y > 0)
+	{
+		quadrante = "2";
+	}
+	if (x < 0 && y < 0)
+	{
+		quadrante = "3";
+	}
+	if (x > 0 && y < 0)
+	{
+		quadrante = "4";
+	}
+	console.log("il punto sta nel " + quadrante + "° quadrante");
+
+	// Algoritmo più efficiente
+	if (x > 0)
+	{
+		if(y > 0)
+		{
+			quadrante = "1";
+		}else{
+			quadrante = "4";
+		}
+	}else{
+		if(y > 0)
+		{
+			quadrante = "2";
+		}else{
+			quadrante = "3";
+		}
+	}
+	</script>
+</body>
+</html>

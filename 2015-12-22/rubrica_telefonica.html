@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rubrica Telefonica: Ricerca Vs Scansione</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+	var vNomi = []; // dichiarazione + inizializzazione di un vettore
+	var vTel = [];
+
+	// abbiamo due vettori, un vettore di Nomi e un vettore di
+	// numeri di telefono
+
+	vNomi[vNomi.length] = "Elena";
+	vTel[vTel.length] = "335681";
+
+	vNomi[vNomi.length] = "Marco";
+	vTel[vTel.length] = "335211";
+
+	vNomi[vNomi.length] = "Luca";
+	vTel[vTel.length] = "351661";
+
+	// Esempio di Scansione
+	var i = 0;
+	while(i < vNomi.length)
+	{
+		// blocco di istruzioni
+		vNomi[i] = vNomi[i] + "1";
+		i = i + 1;
+	}
+
+	// Vogliamo stampare il numero di
+	// telefono di Marco1
+	i = 0;
+	var trovato = false;
+	while(!trovato && i < vNomi.length)
+	{
+		if(vNomi[i] == "Marco1")
+		{
+			trovato = true;
+		}else{
+			i = i + 1;
+		}
+	}
+	if(trovato){
+		console.log(vTel[i]);
+	}else{
+		console.log("Il nome cercato non è nella rubrica!");
+	}
+	</script>
+</body>
+</html>

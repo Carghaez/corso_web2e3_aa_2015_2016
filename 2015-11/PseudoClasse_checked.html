@@ -20,7 +20,12 @@
 <script type="text/javascript">
 	function cambiaColore(tag_input)
 	{
-		tag_input.className = (tag_input.className == "checked")? "":"checked";
+		if (tag_input.className != "checked")
+		{
+			tag_input.className = "checked";
+		}else{
+			tag_input.className = "";
+		}
 	}
 </script>
 	<label>

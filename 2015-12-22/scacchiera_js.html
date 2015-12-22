@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scacchiera in JS</title>
+	<style type="text/css">
+		html,
+		body{
+			margin:0;
+		}
+		#scacchiera {
+			margin: auto;
+			resize: both;
+			overflow: hidden;
+			box-sizing: border-box;
+		}
+		#scacchiera>div {
+			height: 50px;
+		}
+		#scacchiera>div>div {
+			height: 100%;
+			width: 50px;
+			background-color: #DEA669;
+			float: left;
+			cursor: pointer;
+		}
+		#scacchiera>div:nth-of-type(odd)>div:nth-of-type(odd),
+		#scacchiera>div:nth-of-type(even)>div:nth-of-type(even) {
+			background-color: #954C23;
+		}
+	</style>
+</head>
+<body>
+	<div id="scacchiera"></div>
+
+	<script type="text/javascript">
+		var righe = 2;
+		var colonne = 3;
+		var s = document.getElementById("scacchiera");
+
+		var r = 0;
+		while (r < righe)
+		{
+			var c = 0;
+			var divs = "";
+			while (c < colonne)
+			{
+				divs = divs + '<div id="r'+(r+1)+'-c'+(c+1)+'"></div>';
+				c = c + 1;
+			}
+			s.innerHTML = s.innerHTML + "<div>" + divs + "</div>";
+			r = r + 1;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Media tra 3 numeri + minimo</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+	var n = [];
+	n[n.length] = 5;
+	n[n.length] = 7;
+	n[n.length] = 3;
+	var media = (n[0] + n[1] + n[2]) / 3;
+	console.log(media);
+
+	// Ricerca del minimo
+	var minore_parziale = n[0];
+	var i = 1;
+	while(i < n.length)
+	{
+		if(minore_parziale > n[i])
+		{
+			minore_parziale = n[i];
+		}
+		i = i + 1;
+	}
+	console.log("il minore è " + minore_parziale);
+
+	// Ricerca del minimo usando l'indice
+	var i_min = 0;
+	i = 1;
+	while(i < n.length)
+	{
+		if(n[i_min] > n[i])
+		{
+			i_min = i;
+		}
+		i = i + 1;
+	}
+	console.log("il minore è " + n[i_min]);
+	</script>
+</body>
+</html>
