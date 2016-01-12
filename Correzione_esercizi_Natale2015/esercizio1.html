@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esercizio 1</title>
+</head>
+<body>
+<!--
+	Esercizio 1 - Selezione:
+	Leggere tre numeri e calcolare:
+	a) la somma di quelli che sono divisibili per due o per cinque;
+	b) il prodotto di quelli che sono divisibili per due e per cinque;
+	c) la media di quelli che non sono divisibili né per due né per cinque.
+
+	Suggerimento: USATE IL MODULO (operatore %), quando un numero è divisibile per 5? Quando il resto della divsione per 5 è 0! Quindi (numero%5 == 0) se restituire VERO allora numero è divisibile per 5
+-->
+
+<script type="text/javascript">
+
+	// Dichiarazione delle variabili e del vettore
+	var a, b, c;
+	var n = [];
+	// Inizializzazione dei valori dentro le variabili
+	// e dentro il vettore
+	n[0] = a = 5;
+	n[1] = b = 6;
+	n[2] = c = 7;
+
+	// Dichiarazione + Inizializzazione delle variabili dove conterrò il risultato
+	var somma = 0;
+	var prodotto = 1;
+	var media = 0;
+	var i;
+
+	// Punto 1: Senza vettori
+	somma = 0;
+	if ((a % 2 === 0) || (a % 5 === 0))
+	{
+		somma = somma + a;
+	}
+	if ((b % 2 === 0) || (b % 5 === 0))
+	{
+		somma = somma + b;
+	}
+	if ((c % 2 === 0) || (c % 5 === 0))
+	{
+		somma = somma + c;
+	}
+	console.log("Punto 1: Senza vettori = "+somma);
+
+	// Punto 1: Utilizzando il vettore
+	somma = 0;
+	i = 0;
+	while (i < n.length)
+	{
+		if ((n[i] % 2 === 0) || (n[i] % 5 === 0))
+			somma = somma + n[i];
+		i = i + 1;
+	}
+	console.log("Punto 1: Utilizzando il vettore = " + somma);
+
+	// Punto 2 senza vettori
+	prodotto = 1;
+	if ((a % 2 === 0) || (a % 5 === 0))
+	{
+		prodotto = prodotto * a;
+	}
+	if ((b % 2 === 0) || (b % 5 === 0))
+	{
+		prodotto = prodotto * b;
+	}
+	if ((c % 2 === 0) || (c % 5 === 0))
+	{
+		prodotto = prodotto * c;
+	}
+	console.log("Punto 2 senza vettori = " + prodotto);
+
+	// Punto 2 con i vettori
+	prodotto = 1;
+	i = 0; // già dichiarata, la inizializzo a 0
+	while (i < n.length)
+	{
+		if ((n[i] % 2 === 0) || (n[i] % 5 === 0))
+		{
+			prodotto = prodotto * n[i];
+		}
+		i = i + 1;
+	}
+	console.log("Punto 2 con i vettori = " + prodotto);
+
+	// Punto 1 e 2 con i vettori
+	somma = 0;
+	prodotto = 1;
+
+	i = 0;
+	while (i < n.length)
+	{
+		if ((n[i] % 2 === 0) || (n[i] % 5 === 0))
+		{
+			prodotto = prodotto * n[i];
+			somma = somma + n[i];
+		}
+		i = i + 1;
+	}
+	console.log("Punto 1 e 2 con i vettori ==> prodotto: "+prodotto+", somma: "+somma);
+
+	// Punto 3 senza vettori
+	somma = 0;
+	var elementi = 0;
+	if ((a % 2 !== 0) && (a % 5 !== 0))
+	{
+		elementi = elementi + 1;
+		somma = somma + a;
+	}
+	if ((b % 2 !== 0) && (b % 5 !== 0))
+	{
+		elementi = elementi + 1;
+		somma = somma + b;
+	}
+	if ((c % 2 !== 0) && (c % 5 !== 0))
+	{
+		elementi = elementi + 1;
+		somma = somma + c;
+	}
+	media = somma / elementi;
+	console.log("Punto 3 senza vettori ==> media: "+media);
+
+	// Punto 3 con i vettori
+	somma = 0;
+	elementi = 0;
+
+	i = 0;
+	while (i < n.length)
+	{
+		if ((n[i] % 2 !== 0) && (n[i] % 5 !== 0))
+		{
+			somma = somma + n[i];
+			elementi = elementi + 1;
+		}
+		i = i + 1;
+	}
+	media = somma / elementi;
+	console.log("Punto 3 con i vettori ==> media: "+media);
+
+	// Punto 1 - 2 e 3 con i vettori
+	somma = 0;
+	prodotto = 1;
+	elementi = 0;
+	media = 0;
+	i = 0;
+	while (i < n.length)
+	{
+		if ((n[i] % 2 === 0) || (n[i] % 5 === 0))
+		{
+			somma = somma + n[i];
+			prodotto = prodotto * n[i];
+		}else{
+			elementi = elementi + 1;
+			media = media + n[i];
+		}
+		i = i + 1;
+	}
+	media = media / elementi;
+	console.log("Punto 1, 2 e 3 con i vettori ==> somma: "+somma+
+				", prodotto: "+prodotto+
+				", media: "+media);
+</script>
+</body>
+</html>
