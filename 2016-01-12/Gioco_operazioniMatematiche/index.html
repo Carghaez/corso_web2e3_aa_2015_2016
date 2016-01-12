@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gioco delle Operazioni</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<input id="op1" type="text"><input id="op" type="text"><input id="op2" type="text"> = <input id="ris" type="text">
+
+<button onclick="correggi()">correggi</button>
+
+<br />
+<p id="paragrafo"></p>
+
+<script type="text/javascript">
+	var vuoto = parseInt((Math.random()*3));
+
+	if (vuoto !== 0)
+		document.getElementById("op1").value = parseInt((Math.random()*10));
+		document.getElementById("op").value = simboloCasuale();
+	if (vuoto !== 1)
+		document.getElementById("op2").value = parseInt((Math.random()*10));
+	if (vuoto !== 2)
+		document.getElementById("ris").value = parseInt((10+Math.random()*10));
+
+	function simboloCasuale()
+	{
+		var n = parseInt((Math.random()*2));
+		var ciccio;
+		switch(n)
+		{
+			case 0:
+				ciccio = '+';
+				break;
+			case 1:
+				ciccio = '-';
+				break;
+			case 2:
+				ciccio = '*';
+				break;
+			case 3:
+				ciccio = '/';
+				break;
+		}
+		return ciccio;
+	}
+
+	function correggi()
+	{
+		var paragrafo = document.getElementById("paragrafo");
+
+		// Parametri
+		var op1 = Number(document.getElementById("op1").value);
+		var op = document.getElementById("op").value;
+		var op2 = Number(document.getElementById("op2").value);
+		var ris = document.getElementById("ris").value;
+
+		// Primo passo: controlliamo che la variabile op contenga un simbolo matematico
+		if ((op != '+') && (op != '-') && (op != '*') && (op != '/'))
+		{
+			console.log("l'operazione non è consentita");
+			paragrafo.innerHTML = "l'operazione non è consentita";
+			return;
+		}
+
+		// Se mi trovo ad eseguire il codice qui sotto allora vuol dire che la variabile op contiene un simbolo matematico
+
+		// Mi calcolo il risultato facendo op1 op op2
+		var check_ris;
+		switch(op)
+		{
+			case '+':
+				//codice
+				check_ris = op1 + op2;
+				break;
+			case '-':
+				//codice
+				check_ris = op1 - op2;
+				break;
+			case '*':
+				//codice
+				check_ris = op1 * op2;
+				break;
+			case '/':
+				//codice
+				if (op2 !== 0)
+				{
+					check_ris = op1 / op2;
+				}else{
+					check_ris = "impossibile";
+				}
+				break;
+		}
+
+		console.log(check_ris);
+		// Confronto check_ris con il risultato inserito dall'utente
+		if (check_ris != ris)
+		{
+			console.log("Il risultato inserito è sbagliato");
+			paragrafo.innerHTML = "Il risultato inserito è sbagliato";
+			return;
+		}
+
+		// Se sono qui è perchè il risultato è corretto!
+		console.log("Complimenti!");
+		paragrafo.innerHTML = "Complimenti!";
+	}
+</script>
+</body>
+</html>

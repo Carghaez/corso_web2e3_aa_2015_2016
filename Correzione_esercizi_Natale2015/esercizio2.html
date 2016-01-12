@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esericizio 2</title>
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	Esercizio 2 - Iterazione:
+	Un veicolo V1 si muove con una velocità di 10 m/s, mentre un veicolo V2 va a 2,5 m/s. V2 parte con un vantaggio di X metri. Stampare la distanza, secondo per secondo, finché V1 raggiunge V2.
+	*/
+
+	// Parametri - Inizio
+	var v1_vel = 10; // m/s
+	var v2_vel = 2.5; // m/s
+
+	var x_metri = 100; // Dato che inserisce l'utente
+
+	// Posizione dei veicoli
+	var v1_dist = 0;
+	var v2_dist = x_metri;
+
+	var secondi = 0;
+
+	// Parametri - Fine
+
+	// Algoritmo - Inizio
+	while (v1_dist < v2_dist)
+	{
+		v1_dist = v1_dist + v1_vel;
+		v2_dist = v2_dist + v2_vel;
+		secondi = secondi + 1;
+		console.log("Distanza V1: "+v1_dist+", Distanza V2: "+v2_dist);
+	}
+	console.log("Il veicolo V1 ha impiegato "+secondi+" secondi a superare il veicolo V2");
+	// Algoritmo - Fine
+</script>
+</body>
+</html>
