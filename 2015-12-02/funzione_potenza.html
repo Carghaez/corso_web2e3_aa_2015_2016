@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esercitazione: Funzione Potenza</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// Dati due numeri in input, scrivere l'elevamento
+	// a potenza del primo per il secondo
+
+	// Elevamento a Potenza (in inglese pow)
+	// Questo è un algoritmo, di nome pow
+	// che prende 2 parametri (dati): base e potenza
+	// e restituisce un risultato (informazione)
+	function pow(base, potenza)
+	{
+		var risultato;
+		// dobbiamo calcolarci la potenza
+		// intanto sappiamo che base^potenza
+		// se la potenza è 3, significa che
+		// il risultato = base * base * base
+		// quindi...
+		risultato = 1;
+		while (potenza > 0)
+		{
+			risultato = risultato * base;
+			potenza = potenza - 1;
+		}
+		return risultato;
+	}
+
+	console.log(pow(2, 3));
+	</script>
+</body>
+</html>

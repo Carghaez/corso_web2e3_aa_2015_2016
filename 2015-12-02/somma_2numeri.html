@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esercitazione: Somma di due numeri</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/* Dati due numeri in input (dati)
+		 * restituire la loro somma (informazione)
+		 */
+		var numero1 = 5;
+		var numero2 = 7;
+
+		// Algoritmo 1: con variabile di appoggio
+		var risultato = numero1 + numero2;
+		console.log(risultato);
+
+		// Algoritmo 2: senza variabile di appoggio
+		console.log(numero1 + numero2);
+
+		// Algoritmo 3: sfruttando una funzione
+		function somma(x, y)
+		{
+			return x + y;
+		}
+		console.log(somma(numero1, numero2));
+	</script>
+</body>
+</html>

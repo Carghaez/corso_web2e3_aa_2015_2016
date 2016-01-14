@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esercizio 1</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+/*
+Esercizio 1 - Selezione:
+Leggere tre numeri e calcolare:
+a) la somma di quelli che sono divisibili per due o per cinque;
+b) il prodotto di quelli che sono divisibili per due e per cinque;
+c) la media di quelli che non sono divisibili né per due né per cinque.
+
+Suggerimento: USATE IL MODULO (operatore %), quando un numero è divisibile per 5? Quando il resto della divsione per 5 è 0! Quindi (numero%5 == 0) se restituire VERO allora numero è divisibile per 5
+ */
+
+// Dati Iniziali
+var a = 3;
+var b = 6;
+var c = 7;
+
+// Punto a) senza vettori
+var somma = 0;
+if ((a % 2 === 0) || (a % 5 === 0))
+{
+	somma = somma + a;
+}
+
+if ((b % 2 === 0) || (b % 5 === 0))
+{
+	somma = somma + b;
+}
+
+if ((c % 2 === 0) || (c % 5 === 0))
+{
+	somma = somma + c;
+}
+console.log("Punto a) senza vettori ==> somma="+somma);
+
+// Punto b) senza vettori
+var prodotto = 1;
+
+if ((a % 2 === 0) || (a % 5 === 0))
+{
+	prodotto = prodotto * a;
+}
+
+if ((b % 2 === 0) || (b % 5 === 0))
+{
+	prodotto = prodotto * b;
+}
+
+if ((c % 2 === 0) || (c % 5 === 0))
+{
+	prodotto = prodotto * c;
+}
+console.log("Punto b) senza vettori ==> prodotto="+prodotto);
+
+// Punti a) e b) senza vettori
+somma = 0; prodotto = 1;
+
+if ((a % 2 === 0) || (a % 5 === 0))
+{
+	somma = somma + a;
+	prodotto = prodotto * a;
+}
+
+if ((b % 2 === 0) || (b % 5 === 0))
+{
+	somma = somma + b;
+	prodotto = prodotto * b;
+}
+
+if ((c % 2 === 0) || (c % 5 === 0))
+{
+	somma = somma + c;
+	prodotto = prodotto * c;
+}
+console.log("Punti a) e b) senza vettori ==> somma="+somma+", prodotto="+prodotto);
+
+// Punto c) senza vettori
+// la media di quelli che non sono divisibili né per due né per cinque.
+// Formula della media aritmetica: somma degli elementi diviso il numero degli elementi
+var media = 0;
+var elementi = 0;
+if ((a % 2 !== 0) && (a % 5 !== 0))
+{
+	media = media + a;
+	elementi = elementi + 1;
+}
+if ((b % 2 !== 0) && (b % 5 !== 0))
+{
+	media = media + b;
+	elementi = elementi + 1;
+}
+if ((c % 2 !== 0) && (c % 5 !== 0))
+{
+	media = media + c;
+	elementi = elementi + 1;
+}
+media = media / elementi;
+console.log("Punto c) senza vettori ==> media="+media);
+
+// Punti a), b), c) senza vettori
+
+somma = 0; prodotto = 1;
+media = 0; elementi = 0;
+
+if ((a % 2 === 0) || (a % 5 === 0))
+{
+	somma = somma + a;
+	prodotto = prodotto * a;
+}else{
+	media = media + a;
+	elementi = elementi + 1;
+}
+if ((b % 2 === 0) || (b % 5 === 0))
+{
+	somma = somma + b;
+	prodotto = prodotto * b;
+}else{
+	media = media + b;
+	elementi = elementi + 1;
+}
+if ((c % 2 === 0) || (c % 5 === 0))
+{
+	somma = somma + c;
+	prodotto = prodotto * c;
+}else{
+	media = media + c;
+	elementi = elementi + 1;
+}
+media = media / elementi;
+
+console.log("Punti a), b), c) senza vettori ==> somma="+somma+", prodotto="+prodotto+", media="+media);
+</script>
+</body>
+</html>

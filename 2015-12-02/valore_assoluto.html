@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esercitazione: Valore assoluto</title>
+</head>
+<body>
+	<script type="text/javascript">
+	/*
+	 * Dato un numero reale in input (dato), restituire
+	 * il suo valore assoluto (informazione).
+	 */
+
+	// Algoritmo 1: con variabile di appoggio (risultato)
+	var numero = -18;
+	var risultato;
+	if (numero > 0)
+		risultato = numero;
+	else
+		risultato = numero * -1;
+	console.log(risultato);
+
+	// Algoritmo 2: senza variabile di appoggio (più efficiente)
+	var numero = -18;
+	if (numero < 0)
+		numero = -1 * numero;
+	console.log(numero);
+
+	// Algoritmo 3: sfruttando la funzione
+	function absolute(x) {
+		if (x < 0)
+			x = x * -1;
+		return x;
+	}
+	console.log(absolute(-18));
+	</script>
+</body>
+</html>

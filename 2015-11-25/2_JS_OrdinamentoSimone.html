@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS: Ordinamento non efficiente di Simone</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	function isContained(vettore, elemento)
+	{
+		var i = 0;
+		var trovato = false;
+		while (!trovato && i < vettore.length)
+		{
+			if (vettore[i] == elemento)
+			{
+				trovato = true;
+			} else {
+				i++;
+			}
+		}
+		return trovato;
+	}
+
+	function getNext_vPos(vPos)
+	{
+		var new_vPos;
+		// prendiamo il nuovo vPos
+		var i = vPos+1;
+		var trovatoPos = false;
+		while (!trovatoPos && i < v.length)
+		{
+			if (!isContained(vio, i))
+			{
+				trovatoPos = true;
+				new_vPos = i;
+			} else {
+				i++;
+			}
+		}
+		if (trovatoPos)
+			return new_vPos;
+		else
+			return -1;
+	}
+
+	var v = [5, 6, 4, 2, 765, 22, 91];
+	var vio = [];
+	var vPos = 0;
+	// questo è l'indice che mi scandisce
+	// v, lo utilizzo per confrontare l'elemento
+	// v[vPos] con tutti gli altri di v
+	var vioPos = 0;
+	// questo è l'indice che mi scandisce vio
+	// lo incremento quando ho trovato un nuovo
+	// indice da inserire in vio
+	do
+	{
+		// dobbiamo fare in modo che nell'istante Tj vPos sia
+		// l'indice del più piccolo elemento di v che non
+		// abbiamo ancora inserito dentro vio
+
+		// confrontiamo vPos con tutti gli altri
+		// perchè dobbiamo dimostrare che vPos è
+		// il più piccolo elemento di v che
+		// non abbiamo ancora inserito in vio
+		do{
+			var isMin = true;
+			var i = 0;
+			while (isMin && i < v.length)
+			{
+				if (v[vPos] > v[i] && !isContained(vio, i))
+				{
+					isMin = false;
+				} else {
+					i++;
+				}
+			}
+			if(!isMin)
+			{
+				// passare al prossimo vPos
+				vPos = getNext_vPos(vPos);
+				isMin = false;
+			}
+		}while(!isMin && vPos != -1);
+		// Istante Tj
+		// devo eseguire delle operazioni su vio:
+		// devo inserire gli indici, ordinati
+		// di v
+		if(vPos != -1) {
+			vio[vioPos] = vPos; // qui dentro dovrà inserire l'indice dell'elemento v
+			vioPos++;
+			vPos = getNext_vPos(-1);
+		}
+	}while (vPos != -1 && vio.length < v.length);
+	// Se io arrivo qui è perchè vio
+	// ha la stessa lunghezza di v
+	// quindi io devo avere ordinato vio
+
+	// Il risultato dovrà essere 2 4 5 6 22 91 765
+	for(var i = 0; i < v.length; ++i)
+	{
+		console.log(v[vio[i]]);
+	}
+</script>
+</body>
+</html>

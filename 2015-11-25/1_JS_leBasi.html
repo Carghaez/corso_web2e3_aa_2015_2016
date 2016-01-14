@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>JS: Le basi</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// Lo spiegheremo più avanti
+		'use strict';
+
+		// Dichiarazione di una variabile.
+		var v;
+		// v è l'etichetta della nostra variabile.
+		// Dichiarare una variabile significa RISERVARE(allocazione)
+		// una porzione di spazio in memoria RAM, dove sarà
+		// possibile accedervi attraverso l'etichetta.
+
+		// Inizializzazione di una variabile.
+		v = 5;
+		// 5 è il valore che v ha assunto in questo istante.
+		// Inizializare una variabile significa inserire
+		// all'interno della porzione di spazio in memoria RAM
+		// all'etichetta v il valore 5. Da questo momento in poi
+		// la RAM si occuperà di MANTENERE in memoria il dato che
+		// abbiamo inserito.
+		// L'inizializzazione è un caso particolare di assegnazione.
+		// E' la prima assegnazione che noi effettuiamo sulla variabile
+		// appena dichiarata.
+
+		// Una variabile che viene DICHIARATA ma non INIZIALIZZATA
+		// assume valore undefined
+		var q;
+		if (q === undefined)
+		{
+			console.log("la variabile q non è stata inizializzata");
+		}
+
+		// La dichiarazione e l'inizalizzazione può
+		// essere effettuata nella stessa istruzione
+		var k = "ciao";
+
+		// Tipi di dato
+		var stringa = "questa è una stringa";
+		// 4 tra apici singoli ( ' ) o doppi ( " )
+		// viene trattata come una stringa
+		var stringa_numerica = "4";
+		// la variabile numero in questo caso sarà numerica
+		var numero = 4;
+
+		// Attenzione! Pur non essendo lo stesso tipo di dato perchè
+		// stringa_numerica è una stringa e
+		// numero è un dato numerico
+		// entrambe le variabili contengono lo stesso valore
+		// quindi questa uguaglianza sarà VERA
+		if (stringa_numerica == numero) {
+			console.log("sono entrambi lo stesso valore, ma non sappiamo se sono lo stesso tipo di dato");
+		}else{
+			console.log("tralasciando il tipo di dato, hanno sicuramente un valore diverso");
+		}
+
+		// La comparazione === va a comparare non solo
+		// il valore del dato ma anche il tipo del dato
+		if (stringa_numerica === numero) {
+			console.log("sono entrambi lo stesso valore e lo stesso tipo di dato");
+		}else{
+			console.log("caso1: hanno lo stesso valore ma tipo diverso, caso2: hanno lo stesso tipo ma valore diverso, caso3: sono totalmente diversi(tipo e valore)");
+		}
+
+		// TIPI DI DATO
+		// In JS abbiamo 7 tipi di dato
+		// Tutti questi tipi sono non espliciti (IMPLICITI)
+		// Per tale ragione JS viene definito
+		// un linguaggio NON fortemente tipizzato
+		// oppure debolmente tipizzato
+		// Numbers
+		console.log(typeof 37 === 'number');
+		// Nota bene: la virgola su JS è il .
+		console.log(typeof 3.14 === 'number');
+		console.log(typeof Math.LN2 === 'number');
+		console.log(typeof Infinity === 'number');
+		console.log(typeof NaN === 'number'); // Despite being "Not-A-Number"
+		console.log(typeof Number(1) === 'number'); // but never use this form!
+
+		// Strings
+		console.log(typeof "" === 'string');
+		console.log(typeof "bla" === 'string');
+		console.log(typeof (typeof 1) === 'string'); // typeof always returns a string
+		console.log(typeof String("abc") === 'string'); // but never use this form!
+
+		// Booleans
+		console.log(typeof true === 'boolean');
+		console.log(typeof false === 'boolean');
+		console.log(typeof Boolean(true) === 'boolean'); // but never use this form!
+
+		// Symbols
+		console.log(typeof Symbol() === 'symbol');
+		console.log(typeof Symbol('foo') === 'symbol');
+		console.log(typeof Symbol.iterator === 'symbol');
+
+		// Undefined
+		console.log(typeof undefined === 'undefined');
+		console.log(typeof blabla === 'undefined'); // an undefined variable
+
+		// Functions
+		console.log(typeof function(){} === 'function');
+		console.log(typeof class C {} === 'function');
+		console.log(typeof Math.sin === 'function');
+
+		// JS Avanzato: Gli oggetti
+
+		// Objects
+		console.log(typeof {a:1} === 'object');
+
+		// use Array.isArray or Object.prototype.toString.call
+		// to differentiate regular objects from arrays
+		console.log(typeof [] === 'object');
+		console.log(typeof [1, 2, 4] === 'object');
+
+		console.log(typeof new Date() === 'object');
+		console.log(typeof new Object() === 'object');
+
+
+		// The following is confusing. Don't use!
+		console.log(typeof new Boolean(true) === 'object');
+		console.log(typeof new Number(1) === 'object');
+		console.log(typeof new String("abc") === 'object');
+
+		// This stands since the beginning of JavaScript
+		console.log(typeof null === 'object');
+
+		// JS: I CICLI
+		// In JS i cicli ci aiutano ad eseguire
+		// un blocco di codice in modo iterativo
+		// ad ogni esecuzione del blocco di codice
+		// all'interno del ciclo il valore di una
+		// o più variabili dovrà cambiare!
+		// Altrimenti non ci sarebbe differenza
+		// tra un'iterazione di ciclo e l'altra.
+
+		// I cicli sono composti da 3 elementi imprescindibili
+		// 1. Inizializzazione della variabile del ciclo
+		// 2. Condizione del ciclo basata sulla variabile
+		// inizializzata al punto 1
+		// 3. Modifica della variabile del punto 1
+		// (nel for è l'incremento/decremento)
+
+		// Esistono, in generale 2 TIPOLOGIE di ciclo
+		// Queste due tipologie si definiscono
+		// SCANSIONE - RICERCA
+
+		// La SCANSIONE eseguirà il blocco del ciclo
+		// nella sua interezza:
+		// Eseguirà SEMPRE n iterazioni
+
+		// La ricerca eseguirà il blocco del ciclo
+		// fino a quando non sarà trovato l'elemento ricercato
+		// Eseguirà AL PIU' n iterazioni
+		// Caso migliore: una iterazione
+		// Caso peggiore: n iterazioni
+
+		// JS: Ciclo WHILE
+		// Il ciclo WHILE viene utilizzato
+		// principalmente per le RICERCHE
+
+		// Dichiarazione e inizializzazione
+		// della variabile del ciclo
+		var trovato = false;
+		while (!trovato)
+		{
+			// Blocco di istruzioni del ciclo
+			trovato = true;
+		}
+
+		// I cicli WHILE si suddividono in ulteriori due categorie
+		// Cicli con controllo/condizione in testa
+		// Cicli con controllo/condizione in coda
+
+		// Nei cicli con controllo in TESTA
+		// prima viene effettuato il controllo
+		// della condizione, dopo viene eseguito
+		// il codice del blocco qualora la condizione
+		// risultasse vera.
+		// Può accadere che in un ciclo con controllo
+		// in testa non venga mai eseguito il codice
+		// all'interno del blocco del ciclo.
+
+		// Nei cicli con il controllo in CODA
+		// prima viene eseguito il codice del blocco
+		// e solo successivamente viene controllata
+		// la condizione del ciclo.
+		// Nei cicli con il controllo in coda
+		// le istruzioni all'interno del blocco
+		// del ciclo verranno eseguite SEMPRE almeno
+		// una volta.
+
+		// Ciclo WHILE con controllo in coda
+		var trovato = false;
+		do {
+			// Blocco del ciclo
+			trovato = true;
+		}while(!trovato);
+
+		// JS: Ciclo FOR
+		// Il ciclo FOR viene utilizzato
+		// principalmente per le SCANSIONI
+		// for(DICHIARAZIONE e INIZIALIZZAZIONE; CONDIZIONE di USCITA; INCREMENTO/DECREMENTO)
+		// Il ciclo FOR ha il controllo solo in TESTA
+		for (var i = 0; i < 10; ++i)
+		{
+			// Blocco di istruzioni del ciclo
+			console.log("questa è l'iterazione del ciclo for n."+i);
+		}
+
+		// JS: I vettori / array
+		// In generale, un vettore/array è
+		// una collezione di variabili dello stesso tipo
+		// a cui possiamo accedere attraverso l'etichetta
+		// dell'array e il suo indice.
+		// l'indice di un array è, in generale, di tipo
+		// numerico.
+		// NOTA BENE: In JS la restrizione di tipo non c'è.
+		// La dichiarazione di un array avviene
+		// nello stesso modo delle variabili generiche.
+		// Per inizializzare una variabile in array
+		// bisogna utilizzare le []
+		var vettore = [];
+		if (Array.isArray(vettore) === true) {
+			console.log("vettore è un array");
+		}
+
+		// All'interno delle parentesi quadre ( [] ) è
+		// possibile inserire un numero finito
+		// di elementi separati da virgola ( , )
+		vettore = ['4', 43, 52];
+
+		// per accedere al singolo elemento del vettore
+		// bisogna utilizzare il suo INDICE!
+
+		// vettore[2] restituirà 52
+		console.log(vettore[2]);
+
+		// Attenzione! vettore restiuise tutto l'oggetto Array
+		// non è possibile effettuare operazioni matematiche
+		// sull'array ma solo sui singoli elementi!
+	</script>
+</body>
+</html>
