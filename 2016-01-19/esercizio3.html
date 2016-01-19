@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esercizio 3</title>
+</head>
+<body>
+<script type="text/javascript">
+	var stringa = "anna";
+	var palindromo = true;
+
+	var i = 0;
+	while(palindromo && i < stringa.length/2)
+	{
+		if(stringa[i] !== stringa[stringa.length-1-i])
+		{
+			palindromo = false;
+		}
+	}
+
+	if(palindromo === true){
+		console.log("è palindroma!");
+	}else{
+		console.log("non è palindroma!");
+	}
+</script>
+</body>
+</html>

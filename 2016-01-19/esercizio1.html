@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esercizio 1</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		body>div {
+			width: 800px;
+			height: 600px;
+			margin: auto;
+			box-sizing: border-box;
+			border: 1px solid black;
+		}
+		body>div>div>div {
+			float: left;
+			height: 100%;
+			border: 1px solid black;
+			box-sizing: border-box;
+			font-size: 40px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	var gS = 10; // gS sta per grandezza della scacchiera
+	var dirX, dirY;
+
+	function creaScacchieraLogica(grandezza)
+	{
+		// Logica
+		// Creazione della matrice (inseriamo in tutte le celle 0)
+		var m = [grandezza]; // creo un array di lunghezza gS
+		var r = 0;
+		while( r < grandezza)
+		{
+			m[r] = new Array(grandezza); // per ogni riga creo un array di lunghezza gS all'interno dell'array m (che diventerà matrice o array di array)
+			var c = 0;
+			while( c < grandezza)
+			{
+				m[r][c] = 0;
+				c++;
+			}
+			r++;
+		}
+		return m;
+	}
+
+	var m = creaScacchieraLogica(gS);
+
+	function creaScacchieraVisiva()
+	{
+		var r, c; // è equivalente a scrivere var r; var c;
+		r = c = 0; // scacchiera 10x10
+
+		var scacchiera = document.createElement('div'); // <div></div>
+
+		while( r < gS)
+		{
+
+			var riga = document.createElement('div');
+			riga.style.height = 100 / gS + '%';
+			c = 0;
+			while( c < gS)
+			{
+				var cella = document.createElement('div');
+				cella.id = "r"+r+"c"+c;
+				//cella.innerHTML = "r"+r+"c"+c;
+				cella.style.width = 100 / gS + '%';
+				cella.onclick = function () {
+					// prendiamo r e c e inseriamo in m[r][c] il 2 (la roccia)
+					var r = this.id[1];
+					var c = this.id[3];
+					m[r][c] = 2;
+					refreshGrafica();
+				};
+				riga.appendChild(cella);
+				c++;// equivalente a scrivere c = c + 1;
+			}
+			scacchiera.appendChild(riga);
+			r++; // equivalente a scrivere r = r + 1;
+		}
+
+		document.getElementsByTagName('body')[0].appendChild(scacchiera);
+	}
+
+	creaScacchieraVisiva();
+
+	function newDir(){
+		return parseInt(Math.random()*3)-1;
+	}
+
+	function refreshGrafica() {
+		for(var r = 0; r < gS; r++)
+			for(var c = 0; c < gS; c++)
+				switch(m[r][c])
+				{
+					case 0:
+						document.getElementById("r"+r+"c"+c).innerHTML = "";
+						break;
+					case 1:
+						document.getElementById("r"+r+"c"+c).innerHTML =  "O";
+						break;
+					case 2:
+						document.getElementById("r"+r+"c"+c).innerHTML = "X";
+						break;
+				}
+	}
+
+	function resetPos(y, x)
+	{
+		m[y][x] = 0;
+	}
+
+	function setPos(y, x)
+	{
+		m[y][x] = 1;
+		refreshGrafica();
+	}
+
+	// inseriamo il nostro personaggio in una posizione casuale della matrice!
+	var pX, pY;
+	pY = parseInt(Math.random()*m.length);
+	pX = parseInt(Math.random()*m[pY].length);
+	do {
+		dirX = newDir();
+		dirY = newDir();
+	} while(dirX === 0 && dirY === 0);
+
+	setPos(pY, pX);
+
+	function isEmpty()
+	{
+		var tmpY = pY + dirY;
+		var tmpX = pX + dirX;
+		if(tmpY >= gS || tmpY < 0)
+			return false;
+		if(tmpX >= gS || tmpX < 0)
+			return false;
+		console.log("y: "+tmpY+", x:"+tmpX+", valore:"+m[tmpX][tmpY]);
+		if(m[tmpY][tmpX] == 2){
+			console.log("prova");
+			return false;
+		}
+		return true;
+	}
+
+	setInterval(function(){
+		// Tentiamo di far avanzare l'attore, se è ostacolato gli faremo cambiare direzione
+		if (isEmpty()) // la posizione dove stiamo andando è vuota
+		{
+			resetPos(pY, pX);
+			pY += dirY;
+			pX += dirX;
+			setPos(pY, pX);
+		}else{
+			// Ricalcola direzione oppure ruota in senso orario/antiorario
+			do {
+				dirX = newDir();
+				dirY = newDir();
+			} while(dirX === 0 && dirY === 0);
+		}
+	}, 300);
+
+</script>
+</body>
+</html>

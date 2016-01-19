@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esercizio 2</title>
+</head>
+<body>
+<script type="text/javascript">
+	var stringa = "ciao come stai?";
+	var risultato = "";
+	// Suggerimento 1: la stringa può essere trattata come vettore di caratteri
+	// Suggerimento 2: scandiamo la stringa e per ogni carattere controlliamo se è una vocale
+
+	var i = 0;
+	while(i < stringa.length)
+	{
+		if (stringa[i] !== 'a' &&
+			stringa[i] !== 'e' &&
+			stringa[i] !== 'i' &&
+			stringa[i] !== 'o' &&
+			stringa[i] !== 'u')
+		{
+			risultato = risultato + stringa[i];
+		}
+		i = i + 1;
+	}
+
+	if(risultato === "c cm st?")
+	{
+		console.log("Esercizio riuscito!");
+	}else{
+		console.log("riprova!");
+	}
+</script>
+</body>
+</html>
