@@ -1,0 +1,55 @@
+1. lanciare un dado a 6 facce fino a quando non esce due volte consecutive un numero. Stampare il numero di lanci effettuati.
+
+2. dato un array/vettore di numeri:
+a) fare il prodotto dei numeri dispari
+b) sommare i numeri pari
+c) sottrarre al prodotto dei numeri dispari la somma dei numeri pari
+
+3. Data una matrice 4x4 di numeri interi casuali da 1 a 10
+a) Sommare la diagonale che parte da 0,0
+b) Moltiplicare per un numero casuale negativo tutti gli elementi della matrice 4x4
+
+
+4. Dato il seguente codice Javascript scrivere l'output visualizzato sulla console:
+var b = 10;
+var c = 10;
+var a = 10;
+if (a <= b){
+   b = a - 1;
+}
+if (b <= c) {
+    c = b - 1;
+}
+while( a > c )
+{
+   b = b + 2;
+   a = a - 1;
+}
+
+console.log("valori A: "+a+", B:"+b+", C:"+c);
+
+5. Dato il seguente codice Javascript scrivere l'output visualizzato sulla console:
+var a = 1;
+var b = 2;
+var c = 10;
+
+while(a < c)
+{
+   a = a + 3;
+   b = b - 1;
+}
+
+console.log("b: "+b+", a:"+a);
+
+
+Domande possibili
+• Definire l’informatica
+• Definire e distinguere hardware e software
+• Definire e distinguere input e output
+• In che cosa il computer è simile all’essere umano e in che cosa se ne distingue
+• Spiegare la differenza fra utente e programmatore
+• Spiegare la differenza fra computer e calcolatrice
+• Spiegare la differenza fra periferiche di comunicazione e di memorizzazione
+• Spiegare la differenza tra variabile e vettore
+• Spiegare la differenza tra vettore e matrice
+

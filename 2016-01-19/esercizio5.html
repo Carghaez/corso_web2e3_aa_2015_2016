@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pari e Dispari</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+<script type="text/javascript">
+	// Dati iniziali
+	var vettore = [1,2,3,4,5,6,7,8,9]; // vettore.length sarà uguale a 9
+
+	// Algoritmo
+	var totale_pari = 0;
+	var totale_dispari = 0;
+	var i = 0; // i è la variabile del nostro CICLO, ci serve per SCANDIRE gli elementi
+	// all'interno della variabile vettore. Per tale ragione i avrà valori che andranno
+	// da 0 a vettore.length(che è la lunghezza del vettore, cioè il numero totale di
+	// elementi al suo interno)
+	while(i < vettore.length) // Confronto la i con il numero totale di elementi
+	{
+		if (vettore[i]%2 === 0)
+		{
+			totale_pari = totale_pari + 1;
+		}else{
+			totale_dispari = totale_dispari + 1;
+		}
+		i = i + 1;
+	}
+	console.log("il numero totale di elementi pari è "+totale_pari+", il numero totale di elementi dispari è "+totale_dispari);
+</script>
+</body>
+</html>
