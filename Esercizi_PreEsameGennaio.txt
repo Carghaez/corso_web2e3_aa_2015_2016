@@ -53,3 +53,21 @@ Domande possibili
 • Spiegare la differenza tra variabile e vettore
 • Spiegare la differenza tra vettore e matrice
 
+
+--------------
+Nuovi esercizi
+
+6. Dati n chilometri percorsi con x litri di benzina calcolare quanti chilometri percorre una moto con 2 litri di benzina.
+
+7. Sapendo che in un parcheggio la prima ora costa $2 mentre tutte le successive costano $1, scrivere un programma che richieda il numero complessivi delle ore e visualizzi il totale da pagare.
+
+8. Un parcheggio ha la tariffa di un euro per la prima ora di sosta e di 0,50 euro per ogni ora successiva. Conoscendo l'orario di entrata e di uscita di un'autovettura (espresso in ore e minuti), emettere uno scontrino con l'ora di entrata, l'ora di uscita, il tempo di durata della sosta e la relativa spesa
+
+9. La tassa per la raccolta dei rifiuti urbani in comune viene calcolata rispetto alle dimensioni dell'appartamento espresse in metri quadri, in ragione di X euro per ogni mq. All'importo cosi determinato viene poi aggiunta una cifra fissa di Y euro; sul totale, inoltre, viene calcolata un'addizionale pari al P%. I valori dei parametri X, Y e P sono forniti all'inizio. Si vuole ottenere la stampa dell'importo totale per un appartamento con N mq di superficie.
+
+10. Scrivere un programma che stampi in console la successione dei primi 5 numeri pari partendo da un dato numero X.
+
+11. Scrivere un programma che stampi in console il quadrato dei primi 10 numeri naturali partendo da un dato numero X.
+
+12. Visualizzare in console i numeri multipli di 3 compresi tra 1 e 50, in ordine inverso
+
