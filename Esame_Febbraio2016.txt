@@ -8,16 +8,16 @@ Il risultato dell'applicazione dell'algoritmo sarà [0, -1, -2, 3, -6, 5, 6].
 3. (4 Punti)
 Sapendo che in un parcheggio la prima ora costa 0.75€ mentre tutte le successive costano 0.50€, dato un numero complessivo casuale di ore di sosta, far stampare in console il numero di ore di sosta e il totale da pagare.
 
-3. (5 Punti)
+4. (5 Punti)
 Spiegare la differenza tra variabile e vettore
 
-4. (4 Punti) 
+5. (4 Punti) 
 Definire e distinguere input e output
 
-5. (3 Punti)
+6. (3 Punti)
 Definire l’informatica
 
-6. (3 Punti)
+7. (3 Punti)
 Dato il seguente codice Javascript scrivere l'output visualizzato sulla console:
 var v = [0, 1, 2, 3, 4]
 var i = 1;
@@ -29,7 +29,7 @@ while (i < v.length) {
 } 
 console.log(v);
 
-7. (3 Punti)
+8. (3 Punti)
 Dato il seguente codice Javascript scrivere l'output visualizzato sulla console:
 var a = 2;
 var b = 20;
@@ -43,7 +43,7 @@ while(a < c)
 console.log("b: "+b+", a:"+a);
 
 
-8. (3 Punti)
+9. (3 Punti)
 Dato il seguente codice Javascript scrivere l'output visualizzato sulla console:
 var a = 0;
 var b = 10;
