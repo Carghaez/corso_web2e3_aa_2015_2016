@@ -3,7 +3,7 @@ Dopo aver lanciato un dado a 6 facce, stampare se il numero estratto è pari o di
 
 2. (4 Punti)
 Dato il seguente vettore numerico [1, -2, -3, 4, -5, 6, 7], modificare i numeri al suo interno nel seguente modo: se il numero è positivo, sottrargli 1, se il numero è negativo, aggiungere 1.
-Il risultato dell'applicazione dell'algoritmo sarà [0, -1, -2, 3, -6, 5, 6].
+Il risultato dell'applicazione dell'algoritmo sarà [0, -1, -2, 3, -4, 5, 6].
 
 3. (4 Punti)
 Sapendo che in un parcheggio la prima ora costa 0.75€ mentre tutte le successive costano 0.50€, dato un numero complessivo casuale di ore di sosta, far stampare in console il numero di ore di sosta e il totale da pagare.
