@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gli zero alla fine</title>
+</head>
+<body>
+<script type="text/javascript">
+	var v = [1, 0, 2, 3, 4, 5, 0, 7, 0, 9, 10, 11, 12];
+	var trovato_zero;
+	var j = 0;
+	var i = 0;
+	do{
+		trovato_zero = false;
+		i = 0;
+		j = j + 1;
+		while(i < v.length)
+		{
+			if (v[i] === 0 && i < v.length - j)
+			{
+				trovato_zero = true;
+				v[i] = v[i + 1];
+				v[i + 1] = 0;
+			}
+			i = i + 1;
+		}
+	}while(trovato_zero);
+	console.log(v);
+</script>
+</body>
+</html>

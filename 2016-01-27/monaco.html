@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Monaco sul cucuzzolo</title>
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	Un monaco tibetano si trova sul cocuzzolo di una montagna, quest'ultimo simulato con una matrice quadrata di boolean in cui il valore "true" indica la presenza di una perla di saggezza. Scrivere un metodo che prenda in input una matrice di boolean e restituisca il numero di perle di saggezza raccolte dal monaco che, partendo dal centro del cocuzzolo, esegue un movimento unitario alla volta in una direzione casuale prima che egli finisca nel baratro dell'oblio...
+	 */
+	var matrice = new Array(10);
+	for (var i = 0; i < matrice.length; i++) {
+		matrice[i] = new Array(10);
+		for (var j = 0; j < matrice[i].length; j++) {
+			matrice[i][j] = parseInt(Math.random()*2); // va da 0 a 1
+		}
+	}
+
+
+	function raccogliPerle(m)
+	{
+		// All'interno di questa funzione ci riferiremo alla matrice attraverso
+		// L'etichetta m
+		var perle = 0;
+
+					var v = m[m.length / 2]; // E' il vettore al centro della matrice(vettore di vettori)
+					// v è il vettore centrale del "vettore di vettori"
+					var el = v[v.length / 2];
+					// el è l'elemento centrale del vettore v
+
+		var r = m.length / 2; // indice riga
+		var c = m[r].length / 2; // indice colonna
+
+		while(m[r][c] !== 1) // m[r][c] è il nostro el
+		{
+			perle += 1;
+			r += parseInt(Math.random()*3)-1; // aggiungiamo valori da -1 a +1
+			c += parseInt(Math.random()*3)-1; // aggiungiamo valori da -1 a +1
+			// Controllo del bound della matrice
+			// Non dobbiamo uscire fuori dagli indici!
+			if(r < 0) r = 0;
+			if(c < 0) c = 0;
+			if(r >= m.length) r = m.length-1;
+			if(c >= m[r].length) c = m[r].length-1;
+		}
+		// dobbiamo restituire il numero di perle raccolte
+		return perle;
+	}
+
+	console.log(raccogliPerle(matrice));
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esercizio 2</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	Due stringhe si dicono simili se esse coincidono in almeno "p" posizioni, dove "p" è la metà (troncata) della lunghezza della stringa più corta. (Es. "abcdefabcdef" , "zbcaafacz" , coincidono agli indici 1,2,5,6 ed è p=4). Scrivere un metodo che prenda in input un array bidimensionale frastagliato A di stringhe, e restituisca un boolean che indichi se esiste una colonna di A in cui sono presenti almeno due stringhe simili.
+	 */
+
+	var matrice = ["casa", "cassettiera"];
+
+	function isSimilar(m)
+	{
+		// passo 1: definiamo quanto può essere lungo p
+		var p;
+		var max;
+		if( m[0].length < m[1].length)
+		{
+			p = m[0].length / 2;
+			max = m[0].length;
+		}else{
+			p = m[1].length / 2;
+			max = m[1].length;
+		}
+
+		// Passo 2: contiamo il numero di lettere simili nelle due parole
+		var lettere_simili = 0;
+		for (var i = 0; i < max; i++)
+		{
+			// Qui confrontiamo gli indici delle due stringhe
+			if(m[0][i] === m[1][i])
+			{
+				// è simile
+				lettere_simili += 1;
+			}
+		}
+
+		if(p <= lettere_simili)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	if(isSimilar(matrice))
+	{
+		console.log("E' simile!");
+	}else{
+		console.log("Non è simile!");
+	}
+</script>
+</body>
+</html>

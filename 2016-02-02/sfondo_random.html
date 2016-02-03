@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sfondo della pagina che cambia casualmente</title>
+</head>
+<body>
+<script type="text/javascript">
+	// mi calcolo nella variabile c uno dei 16 milioni di colori possibili
+	//var c = parseInt(Math.random()*16777215).toString(16);
+	var c = parseInt(Math.random()*16).toString(16) +
+			parseInt(Math.random()*16).toString(16) +
+			parseInt(Math.random()*16).toString(16) +
+			parseInt(Math.random()*16).toString(16) +
+			parseInt(Math.random()*16).toString(16) +
+			parseInt(Math.random()*16).toString(16);
+	// debug: stampo il colore in formato esadecimale "toString(16)"
+	console.log(c);
+	// accedo al tag body
+	var body = document.getElementsByTagName('body')[0];
+	// Modifico lo sfondo della pagina con quel colore preceduto da #
+	body.style.backgroundColor = "#"+c;
+</script>
+</body>
+</html>
