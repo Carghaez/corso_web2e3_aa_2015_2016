@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soluzione esercizi Pre-Esame</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	1. lanciare un dado a 6 facce fino a quando non esce due volte consecutive un numero. Stampare il numero di lanci effettuati.
+	 */
+	var lancio_dado;
+	var lancio_precedente;
+	var numero_lanci = 0;
+	do {
+		lancio_precedente = lancio_dado;
+		// Operazioni atomiche
+		lancio_dado = parseInt(Math.random()*6 + 1);
+		numero_lanci = numero_lanci + 1;
+	}while(lancio_dado !== lancio_precedente);
+	console.log("1. I lanci effettuati sono: "+numero_lanci);
+
+	/*
+	2. dato un array/vettore di numeri:
+	a) fare il prodotto dei numeri dispari
+	b) sommare i numeri pari
+	c) sottrarre al prodotto dei numeri dispari la somma dei numeri pari
+	 */
+	var v = [];
+	var i = 0;
+	while(i < 10)
+	{
+		v[i] = parseInt(Math.random() * 100 + 1);
+		i = i + 1;
+	}
+	var prodotto_dispari = 1;
+	var somma_pari = 0;
+
+	i = 0;
+	while(i < v.length)
+	{
+		if(v[i] % 2 !== 0)
+		{
+			prodotto_dispari = prodotto_dispari * v[i];
+		}else{
+			somma_pari = somma_pari + v[i];
+		}
+		i = i + 1;
+	}
+	console.log("2. Il prodotto è: "+prodotto_dispari+", la somma: "+somma_pari+", la loro differenza è: "+(prodotto_dispari-somma_pari));
+
+	/*
+	3. Data una matrice 4x4 di numeri interi casuali da 1 a 10
+	a) Sommare la diagonale che parte da 0,0
+	b) Moltiplicare per un numero casuale negativo tutti gli elementi della matrice 4x4
+	 */
+	var m = [];
+	var i = 0;
+	while(i < 4)
+	{
+		m[i] = [];
+		var j = 0;
+		while(j < 4)
+		{
+			m[i][j] = parseInt(Math.random() * 10 + 10);
+			j = j + 1;
+		}
+		i = i + 1;
+	}
+	console.log("3. la matrice è: ");
+	for (var i = 0; i < m.length; i++) {
+		var str = "";
+		for (var j = 0; j < m[i].length; j++) {
+			str = str + " " + m[i][j];
+		}
+		console.log(str);
+	}
+
+	// 3. a)
+	i = 0;
+	var somma_diagonale = 0;
+	while(i < m.length)
+	{
+		// m[i][i] varrà 0,0 - 1,1 - 2,2 - 3,3
+		somma_diagonale = somma_diagonale + m[i][i];
+		i = i + 1;
+	}
+	// 3. b)
+	var numero_negativo = -parseInt(Math.random() * 10);
+	i = 0;
+	while(i < m.length)
+	{
+		var j = 0;
+		while(j < m[i].length)
+		{
+			m[i][j] = m[i][j] * numero_negativo;
+			j = j + 1;
+		}
+		i = i + 1;
+	}
+	/* Usando il ciclo for
+	for (var i = 0; i < m.length; i++)
+		for (var j = 0; j < m[i].length; j++)
+			m[i][j] *= numero_negativo;
+	*/
+	console.log("a) la somma della diagonale è: "+somma_diagonale);
+	console.log("b) la matrice modificata è con il numero negativo: "+numero_negativo);
+	for (var i = 0; i < m.length; i++) {
+		var str = "";
+		j = 0;
+		while(j < m[i].length) {
+			str = str + " " + m[i][j];
+			j = j + 1;
+		}
+		console.log(str);
+	}
+
+	/*
+	6. Dati n chilometri percorsi con x litri di benzina calcolare quanti chilometri percorre una moto con 2 litri di benzina.
+	 */
+	var km_percorsi = parseInt(Math.random()*100 + 1);
+	var benzina_consumata = parseInt(Math.random()*10 + 1);
+	var km_moto;
+	var lt_moto = 2;
+	km_moto = (km_percorsi / benzina_consumata) * lt_moto;
+	console.log("6. km_percorsi: "+km_percorsi+", benzina_consumata: "+benzina_consumata+", km percorsi con "+lt_moto+" litri: "+km_moto);
+
+	/*
+	7. Sapendo che in un parcheggio la prima ora costa $2 mentre tutte le successive costano $1, scrivere un programma che richieda il numero complessivi delle ore e visualizzi il totale da pagare.
+	 */
+	var costoPrimaOra = 2;
+	var costoOra = 1;
+	var oreComplessive = parseInt(Math.random()*10 + 1);
+	var totalePagare = 0;
+	if (oreComplessive >= 1)
+	{
+		totalePagare = costoPrimaOra + ((oreComplessive - 1) * costoOra);
+	}
+	console.log("7. le ore complessive sono "+oreComplessive+" e il costo è "+totalePagare);
+
+	/*
+	8. Un parcheggio ha la tariffa di un euro per la prima ora di sosta e di 0,50 euro per ogni ora successiva. Conoscendo l'orario di entrata e di uscita di un'autovettura (espresso in ore e minuti), emettere uno scontrino con l'ora di entrata, l'ora di uscita, il tempo di durata della sosta e la relativa spesa
+	 */
+	var costoPrimaOra = 1;
+	var costoOra = 0.5;
+	var oraEntrata = parseInt(Math.random()*13); // Entro la mattina
+	var minutiEntrata = parseInt(Math.random()*60);
+	var oraUscita = parseInt(Math.random()*13 + 12); // Esco la sera
+	var minutiUscita = parseInt(Math.random()*60);
+	var totalePagare = 0;
+	console.log("8. Orario entrata: "+oraEntrata+" e "+minutiEntrata+", orario uscita: "+oraUscita+" e "+minutiUscita);
+	var minutiEntrata = oraEntrata * 60 + minutiEntrata;
+	var minutiUscita = oraUscita * 60 + minutiUscita;
+	var oreComplessive = Math.round((minutiUscita - minutiEntrata) / 60);
+	if (oreComplessive >= 1)
+	{
+		totalePagare = costoPrimaOra + ((oreComplessive - 1) * costoOra);
+	}
+	console.log("le ore complessive sono "+oreComplessive+" e il costo è "+totalePagare);
+
+	/*
+	9. La tassa per la raccolta dei rifiuti urbani in comune viene calcolata rispetto alle dimensioni dell'appartamento espresse in metri quadri, in ragione di X euro per ogni mq. All'importo cosi determinato viene poi aggiunta una cifra fissa di Y euro; sul totale, inoltre, viene calcolata un'addizionale pari al P%. I valori dei parametri X, Y e P sono forniti all'inizio. Si vuole ottenere la stampa dell'importo totale per un appartamento con N mq di superficie.
+	 */
+	 var n_MQ = Math.round(Math.random()*300 + 100);
+	 var x_euro = 6;
+	 var y_euro = 45;
+	 var p = 22;
+	 var totale = x_euro*n_MQ + y_euro;
+	 totale = totale + (totale / 100) * p;
+	 console.log("9. importo totale per un appartamento di "+n_MQ+ "mq è: "+totale);
+
+	 /*
+	 10. Scrivere un programma che stampi in console la successione dei primi 5 numeri pari partendo da un dato numero X.
+	*/
+	var x = parseInt(Math.random()*100);
+	var x_tmp = x;
+	var i = 0;
+	var ris = "";
+	while (i < 5)
+	{
+		x_tmp = x_tmp + 1;
+		if(x_tmp % 2 === 0)
+		{
+			ris = ris + " " + x_tmp;
+			i = i + 1;
+		}
+	}
+	console.log("10. la successione dei primi 5 numeri pari partendo da "+x+" è "+ris);
+
+	/*
+	11. Scrivere un programma che stampi in console il quadrato dei primi 10 numeri naturali partendo da un dato numero X.
+	 */
+	var x = parseInt(Math.random()*10);
+	var x_tmp = x;
+	var i = 0;
+	var ris = "";
+	while (i < 10)
+	{
+		ris = ris + " " + Math.pow(x_tmp, 2);
+		x_tmp = x_tmp + 1;
+		i = i + 1;
+	}
+	console.log("11. il quadrato dei primi 10 numeri naturali partendo da "+x+" è "+ris);
+
+	/*
+	12. Visualizzare in console i numeri multipli di 3 compresi tra 1 e 50, in ordine inverso
+	 */
+	var i = 50;
+	var ris = "";
+	while (i > 0)
+	{
+		if (i % 3 === 0)
+		{
+			ris = ris + " " + i;
+		}
+		i = i - 1;
+	}
+	console.log("12. i numeri multipli di 3 compresi tra 1 e 50 in ordine inverso soono "+ris);
+</script>
+</body>
+</html>
