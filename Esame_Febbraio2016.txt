@@ -1,0 +1,85 @@
+1. (4 Punti)
+Dopo aver lanciato un dado a 6 facce, stampare se il numero estratto è pari o dispari.
+
+2. (4 Punti)
+Dato il seguente vettore numerico [1, -2, -3, 4, -5, 6, 7], modificare i numeri al suo interno nel seguente modo: se il numero è positivo, sottrargli 1, se il numero è negativo, aggiungere 1.
+Il risultato dell'applicazione dell'algoritmo sarà [0, -1, -2, 3, -6, 5, 6].
+
+3. (4 Punti)
+Sapendo che in un parcheggio la prima ora costa 0.75€ mentre tutte le successive costano 0.50€, dato un numero complessivo casuale di ore di sosta, far stampare in console il numero di ore di sosta e il totale da pagare.
+
+3. (5 Punti)
+Spiegare la differenza tra variabile e vettore
+
+4. (4 Punti) 
+Definire e distinguere input e output
+
+5. (3 Punti)
+Definire l’informatica
+
+6. (3 Punti)
+Dato il seguente codice Javascript scrivere l'output visualizzato sulla console:
+var v = [0, 1, 2, 3, 4]
+var i = 1;
+while (i < v.length) {
+    if (v[i] < 10) {
+        v[i] = v[i] + v[i - 1];
+        i = i + 1;
+    }
+} 
+console.log(v);
+
+7. (3 Punti)
+Dato il seguente codice Javascript scrivere l'output visualizzato sulla console:
+var a = 2;
+var b = 20;
+var c = 15;
+
+while(a < c)
+{
+   a = a + 3;
+   b = b - 1;
+}
+console.log("b: "+b+", a:"+a);
+
+
+8. (3 Punti)
+Dato il seguente codice Javascript scrivere l'output visualizzato sulla console:
+var a = 0;
+var b = 10;
+var c = true
+while (c === true)
+{
+    a = a + 1;
+    b = b - 1
+    if (a + 2 == b) {
+	c = false;
+    }
+}
+console.log("b: "+b+", a:"+a);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
