@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Onclick, JS e CSS</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+	.content {
+		padding: 20px;
+		margin: 20px;
+		text-align: center;
+		font-size: 36px;
+		display: none;
+	}
+
+	#menu {
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+
+<div id="menu">
+	<button onclick="showContent('home')">HOME</button>
+	<button onclick="showContent('profilo')">PROFILO</button>
+	<button onclick="showContent('contatti')">CONTATTI</button>
+	<button onclick="resetDisplay('block')">MOSTRA TUTTO</button>
+	<button onclick="resetDisplay('none')">NASCONDI TUTTO</button>
+<div>
+
+<div id="home" class="content">HOME</div>
+<div id="profilo" class="content">PROFILO</div>
+<div id="contatti" class="content">CONTATTI</div>
+
+<script type="text/javascript">
+	function resetDisplay(stringa_display)
+	{
+		var divs = document.getElementsByClassName('content');
+		var i = 0;
+		while (i < divs.length)
+		{
+			divs[i].style.display = stringa_display;
+			i = i + 1;
+		}
+	}
+
+	function showContent(stringa_ID)
+	{
+		resetDisplay('none');
+		var div = document.getElementById(stringa_ID);
+		div.style.display = 'block';
+	}
+</script>
+</body>
+</html>
