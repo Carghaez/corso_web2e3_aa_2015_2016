@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creazione Tag HTML</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+<!-- Qui appenderò i bottoni -->
+<div id="menu"></div>
+
+<!-- Qui appenderò il contenuto -->
+<div id="container"></div>
+
+<script type="text/javascript">
+	// Creo il bottone con la funzione createElement
+	var bottone = document.createElement('button');
+	// Inserisco il testo del bottone con la proprietà innerHTML
+	bottone.innerHTML = "un numero";
+	// accedo al tag menu attraverso la funzione getElementById passando l'id
+	var menu = document.getElementById('menu');
+	// inserisco come figlio del menu il tag bottone
+	menu.appendChild(bottone);
+
+	// Creo il div con la funzione createElement
+	var div = document.createElement('div');
+	// Inserisco il testo del div con la proprietà innerHTML
+	div.innerHTML = "lo stesso numero di prima";
+	// accedo al tag container attraverso la funzione getElementById passando l'id
+	var container = document.getElementById('container');
+	// inserisco come figlio del container il tag div
+	container.appendChild(div);
+
+</script>
+</body>
+</html>
