@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creo bottoni casuali</title>
+	<style type="text/css">
+		.menu {
+			text-align: center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	// Accedo al tag body attraverso la funzione getElements (s quindi restituisce array)
+	// getElementsByTagName (prendi tutti gli elementi con quel tag)
+	var body = document.getElementsByTagName('body')[0];
+
+	// creo un div contenitore
+	var div = document.createElement('div');
+	div.className = 'menu';
+
+	// creo un numero casuale da 1 a 10
+	var c = parseInt(Math.random()*10)+1;
+
+	// creo c bottoni
+	var button;
+	for (var i = 0; i < c; i++) {
+		button = document.createElement('button');
+		button.textContent = 'bottone '+(i+1);
+		// Appendo i bottoni al div menu
+		div.appendChild(button);
+	}
+
+	// Appendo il div menu al body
+	body.appendChild(div);
+</script>
+</body>
+</html>

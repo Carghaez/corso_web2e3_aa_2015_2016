@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crea e appendi</title>
+</head>
+<body id="body">
+<script type="text/javascript">
+	// Creo il div
+	var div = document.createElement('div');
+	div.style.width = '300px';
+	div.style.height = '300px';
+	div.style.margin = 'auto';
+	div.style.backgroundColor = '#369';
+
+	// salviamo il body in una variabile
+	var body = document.getElementById('body');
+
+	// appendiamo il div al body
+	body.appendChild(div);
+</script>
+</body>
+</html>

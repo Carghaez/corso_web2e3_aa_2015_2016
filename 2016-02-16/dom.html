@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+<div id="prova">
+	Ciao a tutti!
+</div>
+
+<div id="prova2">
+	Oh, Ciao anche a te!
+</div>
+
+<script type="text/javascript">
+	function modificaContenuto(evento)
+	{
+		switch (evento.type)
+		{
+			case 'mouseover':
+				this.textContent = 'qualcuno mi è passato sopra!';
+				break;
+			case 'click':
+				this.textContent = 'sono stato cliccato!';
+				break;
+		}
+	}
+
+	var divProva = document.getElementById('prova');
+	divProva.style.fontSize = '20px';
+	divProva.addEventListener('click', modificaContenuto);
+
+	var divProva2 = document.getElementById('prova2');
+	divProva2.style.marginTop = '20px';
+	divProva2.addEventListener('mouseover', modificaContenuto);
+</script>
+
+</body>
+</html>
