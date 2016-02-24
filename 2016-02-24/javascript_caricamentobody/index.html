@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Asincrono</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function mostra_saluto () {
+	var lol = 'lol';
+	alert(cicciopuccio);
+}
+
+function main() {
+	var div = document.getElementById('primo_div');
+	div.textContent = 'ciao';
+
+	var bottone = document.getElementById('bottone');
+	bottone.addEventListener('click', mostra_saluto);
+}
+
+document.addEventListener('DOMContentLoaded', main);
+
+/* METODO DEPRECATO
+var body = document.getElementsByTagName('body')[0];
+body.onload = main;
+*/
+
+
+var cicciopuccio = "ciao!";
+
+</script>
+
+<div id="primo_div"></div>
+
+<button id="bottone"> Click me please </button>
+</body>
+</html>

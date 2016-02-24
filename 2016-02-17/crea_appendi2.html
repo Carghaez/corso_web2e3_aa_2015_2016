@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crea e Appendi</title>
+</head>
+<body id="corpo">
+<script type="text/javascript">
+	var b = document.getElementById('corpo');
+	var d = document.createElement('div');
+
+	d.style.width = '200px';
+	d.style.height = '200px';
+	d.style.backgroundColor = '#369';
+	d.style.margin = 'auto';
+	d.style.marginTop = '50px';
+
+	b.appendChild(d);
+
+	console.log(d);
+	console.log(b.innerHTML);
+	console.log(b);
+</script>
+</body>
+</html>

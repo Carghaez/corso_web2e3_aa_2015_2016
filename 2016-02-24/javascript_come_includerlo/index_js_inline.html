@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript">
+		// SCRIPT 1
+		var div = document.getElementById('primo_div');
+		if (div === null)
+		{
+			console.log('il div dello script1 non è ancora stato creato');
+		}else{
+			div.textContent = "Questo è lo script1 nell'HEAD!";
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		// SCRIPT 2
+		var div = document.getElementById('primo_div');
+		if (div === null)
+		{
+			console.log('il div dello script2 non è ancora stato creato');
+		}else{
+			div.textContent = "Questo è lo script2 nel BODY!";
+		}
+	</script>
+
+	<div id="primo_div">
+	</div>
+
+	<script type="text/javascript">
+		// SCRIPT 3
+		var div = document.getElementById('primo_div');
+		if (div === null)
+		{
+			console.log('il div dello script3 non è ancora stato creato');
+		}else{
+			div.textContent = "Questo è lo script3 nel BODY!";
+		}
+	</script>
+
+
+	<script type="text/javascript">
+		// SCRIPT 4
+		var div = document.getElementById('secondo_div');
+		if (div === null)
+		{
+			console.log('il div dello script4 non è ancora stato creato');
+		}else{
+			div.textContent = "Questo è lo script4 nel BODY!";
+		}
+	</script>
+
+	<div id="secondo_div">
+	</div>
+
+	<script type="text/javascript">
+		// SCRIPT 5
+		var div = document.getElementById('secondo_div');
+		if (div === null)
+		{
+			console.log('il div dello script5 non è ancora stato creato');
+		}else{
+			div.textContent = "Questo è lo script5 nel BODY!";
+		}
+	</script>
+</body>
+</html>

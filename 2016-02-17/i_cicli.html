@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>I Cicli</title>
+</head>
+<body>
+<script type="text/javascript">
+	var max;
+
+	var count = 0;
+	max = parseInt(Math.random()*10) + 1;
+	while (count < max) {
+		console.log('while '+(count+1));
+		count = count + 1; //count++;
+	}
+
+	max = parseInt(Math.random()*10) + 1;
+	for (var count = 0; count < max; count++) {
+		console.log('for '+(count+1));
+	}
+</script>
+</body>
+</html>

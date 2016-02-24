@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crea bottoni casuali</title>
+	<meta charset="utf-8" />
+</head>
+<body id="corpo">
+<script type="text/javascript">
+	// genero un numero casuale da 1 a 10
+	// questo numero casuale mi servirà
+	// a creare n bottoni
+	// dove lo userò??
+	// La utilizeremo nella condizione del nostro ciclo
+	var numero_casuale = parseInt(Math.random()*10)+1;
+	// che conta?
+	// conta il numero di bottoni che abbiamo creato
+	// count verrà incrementato da un minimo di 1
+	// ad un massimo di 10
+	var count = 0;
+
+	var corpo = document.getElementById('corpo');
+	var divContenitore = document.createElement('div');
+	divContenitore.style.textAlign = 'center';
+	divContenitore.style.marginTop = '50px';
+	corpo.appendChild(divContenitore);
+
+	while (count < numero_casuale) {
+		// Qui dentro creiamo i bottoni
+		// e li appendiamo (dove?) al body
+		var bottone = document.createElement('button');
+		bottone.textContent = 'odio javascript';
+		divContenitore.appendChild(bottone);
+		count++;
+	}
+</script>
+</body>
+</html>
