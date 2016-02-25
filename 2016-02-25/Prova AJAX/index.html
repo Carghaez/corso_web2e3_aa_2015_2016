@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX</title>
+</head>
+<body>
+<script type="text/javascript">
+	function getTitle(html)
+	{
+		return html.match('<title>(.*)?</title>')[1];
+	}
+
+	function getTotalCommits(html)
+	{
+		/* Ricerca del testo
+		var indice = html.search('   commits');
+		var commits = parseInt((html.substring(indice-50, indice-20)).trim());
+		console.log('i commits attuali sono: '+commits);
+		*/
+		/* Utilizzando il DOM
+		document.write(html);
+		var a = document.getElementById('js-repo-pjax-container');
+		a = a.getElementsByClassName('text-emphasized')[0];
+		var commits = parseInt(a.textContent.trim());
+		console.log('i commits attuali sono: '+commits);
+		*/
+		var indice = html.search('   commits');
+		return parseInt((html.substring(indice-50, indice-20)).trim());
+	}
+
+	function onStateChange()
+	{
+		if (richiesta.readyState == 4)
+		{
+			switch(richiesta.status)
+			{
+				case 200:
+					// Tutto è andato ok!
+					// andiamo a confrontare i documenti html (i responseText)
+					//console.log(getTitle(richiesta.responseText));
+					var c = getTotalCommits(richiesta.responseText);
+					break;
+				case 404:
+					// Pagina non trovata!
+					console.log("Errore 404: Pagina non trovata!");
+					break;
+				default:
+					console.log(richiesta.status);
+					break;
+			}
+			console.log("done!");
+		}
+	}
+
+	var url = 'https://github.com/Carghaez/corso_web2e3_aa_2015_2016';
+
+	var richiesta = new XMLHttpRequest();
+	richiesta.addEventListener('readystatechange', onStateChange);
+	richiesta.open("GET", 'http://cors.io/?u='+url, true);
+	richiesta.send();
+</script>
+</body>
+</html>
