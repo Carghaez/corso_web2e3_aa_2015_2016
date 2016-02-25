@@ -60,19 +60,15 @@ function onCommitsChanged(changes, namespace) {
 }
 
 function inviaRichiesta() {
-	console.log("0");
 	var url = 'https://github.com/Carghaez/corso_web2e3_aa_2015_2016';
 	var richiesta = new XMLHttpRequest();
 	richiesta.addEventListener('readystatechange', onStateChange);
 	richiesta.open("GET", 'http://cors.io/?u='+url, true);
 	richiesta.send();
-	console.log("1");
 }
 
 chrome.storage.onChanged.addListener(onCommitsChanged);
 
 var ogni_ora = 3600000;
 var ogni_minuto = 60000;
-setInterval(inviaRichiesta, 15000);
-
-console.log("HEY HEY HEY");
+setInterval(inviaRichiesta, ogni_minuto);
