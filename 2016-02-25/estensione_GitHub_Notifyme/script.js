@@ -26,8 +26,11 @@ function getTotalCommits(html)
 
 function onStateChange()
 {
+	// readyState == 4 significa che la richiesta è stata ricevuta
 	if (this.readyState == 4)
 	{
+		//status == 200 significa che la pagina web esiste ed è stata ricevuta
+		//status == 404 significa che la pagina web non esiste
 		switch(this.status)
 		{
 			case 200:
@@ -54,6 +57,8 @@ function onCommitsChanged(changes, namespace) {
 		var storageChange = changes[key];
 		var nuoviCommits = storageChange.newValue - storageChange.oldValue;
 
+		console.log("nuovi commits: " +nuoviCommits);
+
 		chrome.browserAction.setBadgeBackgroundColor({ color: '#FF0000' });
 		chrome.browserAction.setBadgeText({ text: nuoviCommits.toString() });
 	}
@@ -71,4 +76,4 @@ chrome.storage.onChanged.addListener(onCommitsChanged);
 
 var ogni_ora = 3600000;
 var ogni_minuto = 60000;
-setInterval(inviaRichiesta, ogni_minuto);
+setInterval(inviaRichiesta, 10000);
