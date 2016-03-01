@@ -72,8 +72,19 @@ function inviaRichiesta() {
 	richiesta.send();
 }
 
+function onAlarm(alarm) {
+	if (alarm && alarm.name == 'inviaRichiesta') {
+		inviaRichiesta();
+	}
+}
+
 chrome.storage.onChanged.addListener(onCommitsChanged);
 
+/*
 var ogni_ora = 3600000;
 var ogni_minuto = 60000;
 setInterval(inviaRichiesta, 10000);
+*/
+
+chrome.alarms.create('inviaRichiesta', {periodInMinutes: 1});
+chrome.alarms.onAlarm.addListener(onAlarm);

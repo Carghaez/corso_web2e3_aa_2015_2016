@@ -2,19 +2,27 @@
 <html>
 <head>
 	<title>Javascript Asincrono</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript">
+		function qualcosa() {
+			console.log('ciao qualcosa!');
+		}
+	</script>
 </head>
-<body>
+
+<body onload="qualcosa()">
 
 <script type="text/javascript">
 
-function mostra_saluto () {
+function mostra_saluto() {
 	var lol = 'lol';
 	alert(cicciopuccio);
 }
 
 function main() {
 	var div = document.getElementById('primo_div');
-	div.textContent = 'ciao';
+	if ( div !== null)
+		div.textContent = 'ciao';
 
 	var bottone = document.getElementById('bottone');
 	bottone.addEventListener('click', mostra_saluto);
@@ -27,12 +35,12 @@ var body = document.getElementsByTagName('body')[0];
 body.onload = main;
 */
 
-
 var cicciopuccio = "ciao!";
 
 </script>
 
-<div id="primo_div"></div>
+<div id="primo_div">
+</div>
 
 <button id="bottone"> Click me please </button>
 </body>

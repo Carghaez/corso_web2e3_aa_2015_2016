@@ -30,22 +30,23 @@
 
 	function onStateChange()
 	{
-		if (richiesta.readyState == 4)
+		if (this.readyState == 4)
 		{
-			switch(richiesta.status)
+			switch(this.status)
 			{
 				case 200:
 					// Tutto è andato ok!
 					// andiamo a confrontare i documenti html (i responseText)
-					//console.log(getTitle(richiesta.responseText));
-					var c = getTotalCommits(richiesta.responseText);
+					//console.log(getTitle(this.responseText));
+					var c = getTotalCommits(this.responseText);
+					console.log("i commits sono "+c);
 					break;
 				case 404:
 					// Pagina non trovata!
 					console.log("Errore 404: Pagina non trovata!");
 					break;
 				default:
-					console.log(richiesta.status);
+					console.log(this.status);
 					break;
 			}
 			console.log("done!");

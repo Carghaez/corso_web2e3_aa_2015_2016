@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prova AJAX</title>
+</head>
+<body>
+<script type="text/javascript">
+/* FUNZIONI */
+
+	function getTotalPhotos(html) {
+		var array = html.match(/<p class="item_extra_photo_number">(.*)?<\/p>/g);
+		var somma = 0;
+		for (var i = 0; i < array.length; i++) {
+			array[i] = array[i].split('>')[1];
+			array[i] = array[i].split('<')[0];
+			somma += parseInt(array[i]);
+		}
+		return somma;
+	}
+
+	function onStateChange() {
+		if (this.readyState == 4){
+			switch (this.status)
+			{
+				case 200:
+					// this.responseText LA STRINGA HTML DELLA PAGINA RICHIESTA
+					var div = document.getElementById('id_div');
+					div.textContent = getTotalPhotos(this.responseText);
+					break;
+				case 404:
+					console.log("Errore "+this.status+": pagina non trovata!");
+					break;
+				default:
+					console.log(this.status);
+					break;
+			}
+		}
+	}
+
+/* CODICE */
+	var div = document.createElement('div');
+	div.id = 'id_div';
+	div.style.width = '700px';
+	div.style.height = '500px';
+	div.style.border = '1px solid black';
+	div.style.margin = '50px auto';
+	//div.style.overflow = 'scroll';
+	var body = document.getElementsByTagName('body')[0];
+	body.appendChild(div);
+
+
+	var URL = 'http://www.subito.it/annunci-sicilia/';
+	var req = new XMLHttpRequest();
+	req.addEventListener('readystatechange', onStateChange);
+	req.open("GET", "http://cors.io/?u="+URL, true);
+	req.send();
+</script>
+</body>
+</html>
