@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quadrato</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+	#quadrato {
+		width: 100px;
+		height: 100px;
+		margin: auto;
+		background-color: red;
+		transition: width 2s, height 4s;
+		left: 10px;
+		position: absolute;
+		/*animation: mymove 5s infinite;*/
+	}
+
+	@keyframes mymove {
+		from {background-color: red;}
+		to {background-color: blue;}
+	}
+	@keyframes mymove2 {
+		from {left: 10px;}
+		to {left: 500px;}
+	}
+	</style>
+</head>
+<body>
+	<div id="quadrato"></div>
+
+<script type="text/javascript">
+	function onClick() {
+		this.style.width = "300px";
+		this.style.height = "300px";
+		this.style.animation = "mymove 5s, mymove2 4s";
+	}
+
+	document.getElementById('quadrato').addEventListener('click', onClick);
+</script>
+</body>
+</html>

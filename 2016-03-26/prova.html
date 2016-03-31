@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>On Hover</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+	#quadrato {
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		margin-left: 10px;
+		transition-property: height, width, margin-left;
+		/* RITARDO */
+		transition-delay: 1s, 0s, 0s;
+		/* DURATA */
+		transition-duration: 10s, 20s, 4s;
+		transition-timing-function: linear;
+		animation-duration: 4s;
+	}
+
+	@keyframes changeColor {
+		0% {
+			background-color: red;
+		}
+		25% {
+			background-color: blue;
+		}
+		50% {
+			background-color: yellow;
+		}
+		75% {
+			background-color: green;
+		}
+		100% {
+			background-color: white;
+		}
+	}
+
+	#quadrato:hover {
+		transition-delay: 0s;
+		height: 400px;
+		width: 1000px;
+		margin-left: 500px;
+		animation-name: changeColor;
+	}
+
+
+	</style>
+</head>
+<body>
+	<div id="quadrato">
+	</div>
+</body>
+</html>

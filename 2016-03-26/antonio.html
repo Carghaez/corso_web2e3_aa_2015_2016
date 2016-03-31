@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Antonio</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+	.quadrato {
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		margin: auto;
+	}
+
+	.animazione {
+		animation-duration: 3s;
+	}
+
+	.animazione:hover {
+		animation-name: allarga;
+	}
+
+	@keyframes allarga {
+		from {
+			width: 100px;
+		}
+		50% {
+			width: 300px;
+		}
+		to {
+			width: 100px;
+		}
+	}
+
+	.transizione {
+		transition-property: height;
+		transition-duration: 6s;
+	}
+
+	.transizione:hover {
+		height: 300px;
+	}
+	</style>
+</head>
+<body>
+	<div class="quadrato animazione transizione"></div>
+</body>
+</html>

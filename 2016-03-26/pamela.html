@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pamela</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+	.quadrato {
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		margin: auto;
+	}
+
+	.animazione {
+		animation-duration: 3s;
+	}
+
+	.animazione:hover {
+		animation-name: allunga;
+	}
+
+	@keyframes allunga {
+		from {
+			height: 100px;
+		}
+		50% {
+			height: 300px;
+		}
+		to {
+			height: 100px;
+		}
+	}
+
+	.transizione {
+		transition-property: width;
+		transition-duration: 6s;
+	}
+
+	.transizione:hover {
+		width: 300px;
+	}
+	</style>
+</head>
+<body>
+	<div class="quadrato animazione transizione"></div>
+</body>
+</html>

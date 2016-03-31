@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animazione</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+
+	.quadrato {
+		width: 210px;
+		height: 210px;
+		background-color: #336699;
+		border: 1px solid black;
+		text-align: center;
+	}
+
+	.animato {
+		animation-duration: 3s; /* obbligatorio stabilire durata */
+		/* animation-iteration-count: infinite; */
+	}
+
+	.animato:hover {
+		animation-name: modifica;
+	}
+
+	@keyframes modifica {
+		from {
+			width: 210px;
+		}
+		to {
+			width: 500px;
+		}
+	}
+
+	.transizione {
+		transition-property: height;
+		transition-duration: 3s;
+	}
+
+	/*.transizione:hover {
+		height: 500px;
+	}*/
+	</style>
+</head>
+<body>
+	<div class="quadrato" onclick="this.className = this.className+' animato'"></div>
+	<div class="quadrato transizione" onclick="this.style.height ='500px'">
+		T<br />
+		R<br />
+		A<br />
+		N<br />
+		S<br />
+		I<br />
+		Z<br />
+		I<br />
+		O<br />
+		N<br />
+		E
+	</div>
+</body>
+</html>
