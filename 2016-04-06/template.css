@@ -117,7 +117,27 @@ strettamente da questo padding*/
 li.dropdown {
 	position: relative;
 }
-
+li.dropdown>ul::before {
+	content: '';
+	display: inline-block;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #ccc;
+	border-bottom-color: rgba(190, 190, 180, 1);
+	position: absolute;
+	top: -7px;
+	left: 9px;
+}
+li.dropdown>ul::after {
+	content: '';
+	display: inline-block;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid rgba(220, 220, 200, 1);
+	position: absolute;
+	top: -6px;
+	left: 10px;
+}
 /* Dropdown Caret (triangolino) */
 li.dropdown>a::after {
 	display: inline-block;
