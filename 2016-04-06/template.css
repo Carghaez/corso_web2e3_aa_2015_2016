@@ -1,0 +1,169 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #f2f2f2;
+}
+
+#nav-main {
+	background-color: rgba(220, 220, 200, .8);
+	box-shadow: 0 0 2px black;
+	font-size: 20px;
+}
+#nav-main.top-persistent {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 999;
+}
+/* Ci serve per ridare altezza
+al contenuto che ha come figli
+elementi floattanti */
+#nav-main::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/* Ci serve per evitare che il tag dopo il
+nav-main si ritrova a stare sotto di esso */
+#nav-main.top-persistent + * {
+	margin-top: 70px;
+}
+/* Il margin-top scritto sopra dipende
+strettamente da questo padding*/
+#nav-main>div>a,
+#nav-main>ul>li>a {
+	padding: 14px 0;
+}
+
+/* Brand o Logo */
+#nav-main #nav-brand {
+	float: left;
+	margin: 0 30px;
+}
+#nav-main #nav-main.reverse #nav-brand {
+	float: right;
+}
+
+#nav-main a {
+	text-decoration: none;
+	color: black;
+	display: block;
+}
+#nav-main ul {
+	list-style-type: none;
+}
+#nav-main>ul {
+	padding-left: 0;
+	margin: 0 20px;
+	float: right;
+}
+#nav-main.reverse>ul {
+	float:left;
+}
+#nav-main>ul>li {
+	display: inline-block;
+}
+#nav-main>ul>li>a {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* Idea 1 */
+#nav-main>ul>li>a.roundbox>span {
+	transition: all 0.6s ease;
+	padding: 6px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	border: 1px solid rgba(0, 0, 0, 0);
+}
+#nav-main>ul>li>a.roundbox:hover>span {
+	border-color: rgba(190, 190, 180, 1);
+	background-color: rgba(210, 210, 200, .9);
+}
+
+/* Idea 2 */
+#nav-main>ul>li>a.rotate>span {
+	transition: all 1s ease;
+	display: block;
+}
+#nav-main>ul>li>a.rotate:hover>span {
+	transform: rotateX(360deg);
+}
+
+/* Idea 3 */
+#nav-main>ul>li>a.interlinear.double::before,
+#nav-main>ul>li>a.interlinear::after {
+	transition: all 0.5s ease;
+	width: 0;
+	margin: auto;
+	content: '';
+	display: block;
+	opacity: 0;
+	border: 1px dotted black;
+}
+#nav-main>ul>li>a.interlinear.double:hover::before,
+#nav-main>ul>li>a.interlinear:hover::after {
+	width: 100%;
+	opacity: 1;
+	border-color: rgba(190, 190, 180, 1);
+}
+
+
+/* Dropdown */
+li.dropdown {
+	position: relative;
+}
+
+/* Dropdown Caret (triangolino) */
+li.dropdown>a::after {
+	display: inline-block;
+	margin-top: -1px;
+	vertical-align: middle;
+	border-top: 4px solid;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	content: ' ';
+}
+li.dropdown:hover>a::after {
+	border-bottom: 4px solid;
+	border-top: 0;
+}
+
+li.dropdown>ul {
+	position: absolute;
+	padding: 5px 0;
+	margin-top: 15px;
+	background-color: rgba(220, 220, 200, .8);
+	border: 1px solid rgba(0, 0, 0, .15);
+	border-radius: 4px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, .175);
+	font-size: 15px;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+li.dropdown>ul.dropdown-nav-static {
+	width: 100%;
+}
+li.dropdown:hover>ul {
+	opacity: 1;
+	margin-top: -5px;
+}
+li.dropdown>ul>li>a {
+	padding: 3px 20px;
+	clear: both;
+	display: block;
+	line-height: 1.4;
+	white-space: nowrap;
+}
+li.dropdown>ul.dropdown-nav-static>li>a {
+	word-wrap: break-word;
+	white-space: normal;
+}
+li.dropdown>ul>li>a:hover {
+	color: #262626;
+	background-color: rgba(210, 210, 200, .9);
+}
