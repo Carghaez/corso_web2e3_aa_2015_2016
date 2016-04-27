@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="assets/fonts/material-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/card.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar" id="navbar-main">
+			<nav id="navbar-burger">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</nav>
+			<div class="navbar-brand">
+				<a href="#">
+					<img src="assets/img/logo.png" />
+				</a>
+			</div>
+			<div class="navbar-side">
+				<ul class="navbar-menu">
+					<li>
+						<a href="#">Home</a>
+					</li>
+					<li class="dropdown">
+						<a href="#">Dropdown</a>
+						<ul>
+							<li>
+								<a href="#">Sezione 1</a>
+							</li>
+							<li>
+								<a href="#">Sezione 2</a>
+							</li>
+							<li>
+								<a href="#">Sezione 3</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">About</a>
+					</li>
+				</ul>
+				<ul class="navbar-menu-secondary">
+					<li>
+						<div class="btn-group">
+							<a href="#" class="btn">Login</a>
+							<a href="#" class="btn">Registrati</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<form id="navbar-search" action="#" method="post" onsubmit="ricerca();return false;">
+				<i class="material-icons navbar-icon-search navbar-search-toggle">search</i>
+				<input type="text" id="navbar-search-input" placeholder="Cerca" required />
+				<i id="navbar-search-clear" class="material-icons navbar-icon-clear">clear</i>
+				<i class="material-icons navbar-icon-back navbar-search-toggle">arrow_back</i>
+			</form>
+		</nav>
+	</header>
+	<section id="articles">
+
+	</section>
+	<footer>
+
+	</footer>
+	<script type="text/javascript" src="assets/js/navbar.js"></script>
+
+	<script type="text/javascript">
+		function onReadyStateChange() {
+			if (this.readyState == 4) {
+				switch(this.status) {
+					case 200:
+						var articles = document.getElementById('articles');
+						var risp = JSON.parse(this.response);
+						for (var i = 0; i < risp.Search.length; ++i) {
+							var post = risp.Search[i];
+							if (post.Poster.length > 4) {
+								var article = document.createElement('article');
+								article.id = post.imdbID;
+								article.classList.add('card');
+								var card_cover = document.createElement('div');
+								card_cover.classList.add('card-cover');
+								var card_content = document.createElement('div');
+								card_content.classList.add('card-content');
+								var card_action = document.createElement('div');
+								card_action.classList.add('card-action');
+								article.appendChild(card_cover);
+								article.appendChild(card_content);
+								article.appendChild(card_action);
+								articles.appendChild(article);
+
+								card_cover.innerHTML = '<div class="card-background"><img src="'+ post.Poster +'" alt="'+ post.Title +'"></div><h2 class="card-title">'+ post.Title +'<small>Uscito nel '+ post.Year +'</small></h2>';
+							}
+						}
+						break;
+					case 404:
+						console.log('pagina non trovata');
+						break;
+				}
+			}
+		}
+
+		function ricerca() {
+			var testo = document.getElementById('navbar-search-input').value;
+			document.getElementById('articles').innerHTML = "";
+			var richiesta = new XMLHttpRequest();
+			richiesta.addEventListener('readystatechange', onReadyStateChange);
+			richiesta.open('GET', 'http://www.omdbapi.com/?s='+testo);
+			richiesta.send();
+		}
+	</script>
+</body>
+</html>

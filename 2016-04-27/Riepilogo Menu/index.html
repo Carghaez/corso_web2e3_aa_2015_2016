@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Il mio sito</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="assets/fonts/material-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/card.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar">
+			<div class="navbar-brand">
+				<a href="#">
+					<img src="assets/img/logo.png" />
+				</a>
+			</div>
+			<div class="navbar-side">
+				<ul class="navbar-menu">
+					<li><a href="#">Home</a></li>
+					<li class="dropdown">
+						<a href="#">Corsi</a>
+						<ul>
+							<li><a href="#">Moda</a></li>
+							<li><a href="#">Gioiello</a></li>
+							<li><a href="#">Design e Comunicazione</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">About</a>
+					</li>
+				</ul>
+				<ul class="navbar-menu-secondary">
+					<li>
+						<div class="btn-group">
+							<a href="#" class="btn">Login</a>
+							<a href="#" class="btn">Registrati</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<style type="text/css">
+				.navbar-search {
+					float: right;
+					margin-top: 10px;
+					height: 27px;
+					position: relative;
+				}
+				.navbar-search input {
+					height: 100%;
+					padding-left: 30px;
+					border-radius: 6px;
+					border: 1px solid #FFFFFF;
+					outline: none;
+					color: #fff;
+					background-color: transparent;
+				}
+				.navbar-icon-search,
+				.navbar-icon-clear {
+					position: absolute;
+					top: 4px;
+				}
+				.navbar-icon-search {
+					left: 4px;
+				}
+				.navbar-icon-clear {
+					right: 4px;
+				}
+				.navbar-search input:not(:valid) ~ .navbar-icon-clear {
+					opacity: 0;
+				}
+				.navbar-search .material-icons {
+					cursor: pointer;
+				}
+			</style>
+			<form class="navbar-search" method="get" onsubmit="ricerca();return false;">
+				<input id="navbar-search-input" type="text" name="search-title" required placeholder="Cerca un titolo" />
+				<i id="navbar-search-toggle" class="material-icons navbar-icon-search navbar-search-toggle">search</i>
+				<i id="navbar-search-clear" class="material-icons navbar-icon-clear">clear</i>
+			</form>
+		</nav>
+	</header>
+
+	<style type="text/css">
+	section {
+		margin: 40px auto;
+	}
+	.container-fluid {
+		padding: 10px 15px;
+	}
+	.row {
+		margin: 0 -15px;
+	}
+	.row::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.col-7 {
+		float: left;
+		width: 70%;
+	}
+	.col-3 {
+		float: left;
+		width: 30%;
+	}
+	.col-5 {
+		float: left;
+		width: 50%;
+	}
+	.col-6 {
+		float: left;
+		width: 50%;
+	}
+	.col-offset-2 {
+		margin-left: 25%;
+	}
+	</style>
+	<section>
+		<div class="container-fluid">
+			<div class="row" id="articles">
+
+			</div>
+		</div>
+	</section>
+
+
+<!-- 				<article id="tt0372784" class="card">
+					<div class="card-cover">
+						<div class="card-background">
+							<img src="http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg" alt="Batman Begins">
+						</div>
+						<h2 class="card-title">
+							Batman Begins
+							<small>Uscito nel 2005</small>
+						</h2>
+					</div>
+					<div class="card-content">
+						<h3>Informazioni Aggiuntive</h3>
+						<ul>
+							<li>Tipologia: Movie</li>
+						</ul>
+					</div>
+					<div class="card-action">
+						<button>Visualizza altro</button>
+					</div>
+				</article> -->
+
+
+	<script type="text/javascript">
+
+		function onReadyStateChange() {
+			if (this.readyState == 4) {
+				switch(this.status) {
+					case 200:
+						var articles = document.getElementById('articles');
+						var risp = JSON.parse(this.response);
+						for (var i = 0; i < risp.Search.length; ++i) {
+							var post = risp.Search[i];
+							if (post.Poster.length > 4) {
+								var article = document.createElement('article');
+								article.id = post.imdbID;
+								article.classList.add('card');
+								var card_cover = document.createElement('div');
+								card_cover.classList.add('card-cover');
+								var card_content = document.createElement('div');
+								card_content.classList.add('card-content');
+								var card_action = document.createElement('div');
+								card_action.classList.add('card-action');
+								article.appendChild(card_cover);
+								article.appendChild(card_content);
+								article.appendChild(card_action);
+								articles.appendChild(article);
+
+								card_cover.innerHTML = '<div class="card-background"><img src="'+ post.Poster +'" alt="'+ post.Title +'"></div><h2 class="card-title">'+ post.Title +'<small>Uscito nel '+ post.Year +'</small></h2>';
+							}
+						}
+						break;
+					case 404:
+						console.log('pagina non trovata');
+						break;
+				}
+			}
+		}
+
+		function ricerca() {
+			var testo = document.getElementById('navbar-search-input').value;
+			document.getElementById('articles').innerHTML = "";
+			var richiesta = new XMLHttpRequest();
+			richiesta.addEventListener('readystatechange', onReadyStateChange);
+			richiesta.open('GET', 'http://www.omdbapi.com/?s='+testo);
+			richiesta.send();
+		}
+
+
+		/* Algoritmo che lega ad ogni dropdown la funzione di toggle */
+		function onDropdownClick() {
+			this.classList.toggle('dropdown-open');
+			this.addEventListener('mouseleave', onDropdownLeave);
+		}
+
+		function onDropdownLeave() {
+			this.classList.remove('dropdown-open');
+		}
+
+		function main() {
+			var navbars = document.getElementsByClassName('navbar');
+			for (var i = 0; i < navbars.length; i++) {
+				var dropdowns = navbars[i].getElementsByClassName('dropdown');
+				for (var j = 0; j < dropdowns.length; j++) {
+					dropdowns[j].addEventListener('click', onDropdownClick);
+				}
+			}
+
+			document.getElementById('navbar-search-toggle').addEventListener('click', function() {
+				var input = document.getElementById('navbar-search-input');
+				input.focus();
+			});
+
+			document.getElementById('navbar-search-clear').addEventListener('click', function() {
+				var input = document.getElementById('navbar-search-input');
+				input.value = '';
+				input.focus();
+			});
+		}
+
+		document.addEventListener('DOMContentLoaded', main);
+	</script>
+</body>
+</html>

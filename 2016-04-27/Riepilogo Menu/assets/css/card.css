@@ -1,0 +1,59 @@
+.card {
+    border: 1px solid #454545;
+    width: 300px;
+    margin: 10px;
+    float: left;
+}
+
+.card::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.card .card-cover {
+    position: relative;
+}
+
+.card .card-background img {
+    width: 100%;
+    height: 445px;
+}
+
+.card .card-title {
+    position: absolute;
+    display: block;
+    top: 0;
+    background-color: rgba(69,69,69,0.7);
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    color: #F3F3F3;
+    margin: 0;
+}
+
+.card .card-title small {
+    display: block;
+    font-weight: 300;
+}
+
+.card .card-content {
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+}
+
+.card .card-action {
+    margin-top: -6px;
+}
+
+.card .card-action button {
+    padding: 10px;
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: rgb(195, 148, 78);
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
