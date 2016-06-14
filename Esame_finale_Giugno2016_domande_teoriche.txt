@@ -1,35 +1,35 @@
 HTML
 
-Per cosa sta l'acronimo HTML?
-Chi è che definisce lo standard web?
-Che differenza c'è tra il tag <b> e il tag <strong>?
-Il tag <input> ha un tag di chiusura? Scrivi 2 tag HTML che non hanno tag di chiusura
-Qual è la sintassi per inserire un commento in una pagina HTML?
+1) Per cosa sta l'acronimo HTML?
+2) Chi è che definisce lo standard web?
+3) Che differenza c'è tra il tag <b> e il tag <strong>?
+4) Il tag <input> ha un tag di chiusura? Scrivi 2 tag HTML che non hanno tag di chiusura
+5) Qual è la sintassi per inserire un commento in una pagina HTML?
 
 CSS
 
-Scrivere la corretta sintassi HTML per riferirsi ad un foglio CSS esterno.
-All'interno di quale tag HTML è corretto inserire i tag di riferimento ad un CSS esterno?
-Qual è la proprietà CSS corretta per modificare il colore di sfondo di un tag HTML?
-Qual è la proprietà CSS corretta per modificare il colore del testo all'interno di un tag HTML?
-Quale tra le due proprietà CSS, padding e margin, accetta valori negativi?
-Qual è la corretta proprietà CSS per rendere grassetto il testo all'interno di un tag HTML?
-Qual è il corretto selettore CSS per accedere al tag immediatamente successivo al tag di ID "demo"?
-Se un tag con proprietà "display: block;" contiene al suo interno solo figli floattanti, a quanto sarà equivalente la sua altezza?
-Scrivere il corretto selettore CSS e le corrette proprietà CSS per rendere dinamica l'altezza del tag di id "demo" che contiene come figli solo elementi floattanti.
-Come si selezionano tutti i tag <img> pari all'interno di un tag <div>?
-Con quale operatore si raggruppano le stesse proprietà CSS su più selettori diversi?
-Qual è il valore di default di qualsiasi tag HTML per quanto riguarda la proprietà position?
-Qual è la proprietà che differenzia un tag <div> da un tag <span>? E quale valore assume per ognuno dei due tag? Che cosa comporta questo valore differente per questi due tag?
+1) Scrivere la corretta sintassi HTML per riferirsi ad un foglio CSS esterno.
+2) All'interno di quale tag HTML è corretto inserire i tag di riferimento ad un CSS esterno?
+3) Qual è la proprietà CSS corretta per modificare il colore di sfondo di un tag HTML?
+4) Qual è la proprietà CSS corretta per modificare il colore del testo all'interno di un tag HTML?
+5) Quale tra le due proprietà CSS, padding e margin, accetta valori negativi?
+6) Qual è la corretta proprietà CSS per rendere grassetto il testo all'interno di un tag HTML?
+7) Qual è il corretto selettore CSS per accedere al tag immediatamente successivo al tag di ID "demo"?
+8) Se un tag con proprietà "display: block;" contiene al suo interno solo figli floattanti, a quanto sarà equivalente la sua altezza?
+9) Scrivere il corretto selettore CSS e le corrette proprietà CSS per rendere dinamica l'altezza del tag di id "demo" che contiene come figli solo elementi floattanti.
+10) Come si selezionano tutti i tag <img> pari all'interno di un tag <div>?
+11) Con quale operatore si raggruppano le stesse proprietà CSS su più selettori diversi?
+12) Qual è il valore di default di qualsiasi tag HTML per quanto riguarda la proprietà position?
+13) Qual è la proprietà che differenzia un tag <div> da un tag <span>? E quale valore assume per ognuno dei due tag? Che cosa comporta questo valore differente per questi due tag?
 
 Javscript
 
-Scrivere l'istruzione che permette di eseguire una funzione javascript al caricamento della pagina web.
-Scrivere l'istruzione che permette di eseguire una funzione javascript al click di un pulsante che ha come id "demo".
-Scrivere l'istruzione javascript che permette di creare un numero intero casuale da -4 a +12.
+1) Scrivere l'istruzione che permette di eseguire una funzione javascript al caricamento della pagina web.
+2) Scrivere l'istruzione che permette di eseguire una funzione javascript al click di un pulsante che ha come id "demo".
+3) Scrivere l'istruzione javascript che permette di creare un numero intero casuale da -4 a +12.
 
 Web
 
-Che cos'è e a cosa serve il pacchetto software WAMP? Descrivere i programmi e le loro funzionalità
-Che differenza c'è tra HTTP e HTTPS?
-Che differenza c'è tra TCP e UDP? Qual è più sicuro? Qual è più efficiente?
+1) Che cos'è e a cosa serve il pacchetto software WAMP? Descrivere i programmi e le loro funzionalità
+2) Che differenza c'è tra HTTP e HTTPS?
+3) Che differenza c'è tra TCP e UDP? Qual è più sicuro? Qual è più efficiente?
