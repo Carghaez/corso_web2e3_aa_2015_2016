@@ -1,0 +1,22 @@
+Esercizi di Web2e3
+
+1) Creare una funzione stampa() che emuli il funzionamento della funzione log() di console, ma sulla pagina HTML invece che sulla console.
+
+2) Dato il seguente codice HTML:
+<div class="card">
+    <div class="card-content">
+        <h2 class="card-title">Card Title</h2>
+        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+    </div>
+    <div class="card-action">
+        <a href="#">This is a link</a>
+        <a href="#">This is another link</a>
+    </div>
+</div>
+Scrivere un foglio CSS contenente i selettori sopra descritti in modo tale da ottenere il componente grafico presentato all'indirizzo http://carghaez.altervista.org/card.png
+
+info aggiuntive: colore di sfondo #546E7A, colore anchors #ffab40
+
+3) Scrivere una pagina HTML e un foglio CSS contenente il menù presentato all'indirizzo http://carghaez.altervista.org/menu.png
+
+info aggiuntive: colore di sfondo #F3F3F3, colore dell'anchor selezionata #008CBA
