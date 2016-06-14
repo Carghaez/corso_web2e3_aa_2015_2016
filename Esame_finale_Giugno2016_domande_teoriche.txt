@@ -27,6 +27,7 @@ Javscript
 1) Scrivere l'istruzione che permette di eseguire una funzione javascript al caricamento della pagina web.
 2) Scrivere l'istruzione che permette di eseguire una funzione javascript al click di un pulsante che ha come id "demo".
 3) Scrivere l'istruzione javascript che permette di creare un numero intero casuale da -4 a +12.
+4) Scrivere il codice javascript che permette di caricare un contenuto dinamico in base al testo inserito da un'utente da una pagina web esterna (http://www.omdbapi.com/?s=TESTO)
 
 Web
 
